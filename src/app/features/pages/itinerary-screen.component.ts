@@ -20,7 +20,7 @@ interface ItineraryDay {
       <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-surface"></div>
     </div>
 
-    <main class="relative pt-[40px] pb-[120px] px-[20px]">
+    <main class="content-area relative pt-[40px] pb-[120px] px-[20px]">
       <div class="relative mt-[24px]">
         <div class="absolute left-[18px] top-4 bottom-4 timeline-line opacity-20"></div>
         
@@ -79,6 +79,17 @@ interface ItineraryDay {
     </main>
   `,
   styles: [`
+    :host {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .content-area {
+      flex-grow: 1;
+      overflow-y: auto;
+    }
     .bg-surface { background-color: #f9f9fe; }
     .glass-card {
       background: rgba(255, 255, 255, 0.4);
