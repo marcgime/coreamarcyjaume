@@ -196,6 +196,6 @@ export class DestinationHeroComponent {
         return cityImages[key];
       }
     }
-    return `https://images.unsplash.com/featured/?${encodeURIComponent(this.locationService.currentCity())},travel&q=80&w=1200&auto=format&fit=crop`;
+    return `https://loremflickr.com/1200/800/${encodeURIComponent(city)},travel`;
   });
 }
