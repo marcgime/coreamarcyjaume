@@ -477,7 +477,7 @@ h1 {
 /* Fixed Bottom Navigation Capsule */
 .nav-container {
   position: fixed;
-  bottom: calc(var(--safe-area-bottom) + 12px); /* Flota sobre el Home Indicator de Apple */
+  bottom: calc(var(--safe-area-bottom) + 2px); /* Un poco más abajo */
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 40px); /* Margen elegante de 20px a cada lado */
@@ -485,10 +485,10 @@ h1 {
   z-index: 100;
   display: flex;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: var(--glass-nav-blur);
-  -webkit-backdrop-filter: var(--glass-nav-blur);
-  border: 1px solid rgba(255, 255, 255, 0.65); /* Borde sutil y catch-light en 360 grados */
+  background: rgba(255, 255, 255, 0.35); /* Más transparente */
+  backdrop-filter: blur(12px); /* Menos difuminado */
+  -webkit-backdrop-filter: blur(12px); /* Menos difuminado */
+  border: 1px solid rgba(255, 255, 255, 0.55); /* Borde sutil y catch-light en 360 grados */
   border-radius: 9999px; /* Forma de píldora tipo dock de Apple */
   box-shadow: 0 10px 40px 0 rgba(26, 35, 126, 0.12); /* Sombra elegante e integrada */
   padding-bottom: 0; /* No se necesita padding al flotar */
