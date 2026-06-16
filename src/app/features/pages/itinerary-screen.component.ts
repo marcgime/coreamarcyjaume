@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface ItineraryDay {
@@ -20,26 +20,7 @@ interface ItineraryDay {
       <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-surface"></div>
     </div>
 
-    <!-- Header -->
-    <header class="fixed top-0 w-full z-50 bg-surface/50 backdrop-blur-xl border-b border-white/20 shadow-sm shadow-primary/10 pt-[59px] px-[20px] pb-[8px] flex flex-col">
-      <div class="flex items-center justify-between h-14">
-        <div class="flex items-center gap-3">
-          <span class="material-symbols-outlined text-[#1a237e] font-headline-md text-headline-md">account_circle</span>
-          <h1 class="font-display-lg text-display-lg text-[#1a237e] font-bold text-[34px] tracking-tight">Discover Korea</h1>
-        </div>
-        <span class="material-symbols-outlined text-[#1a237e] font-headline-md text-headline-md">notifications</span>
-      </div>
-    </header>
-
-    <main class="relative pt-[140px] pb-[120px] px-[20px]">
-      <section class="mb-[24px]">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="px-3 py-1 glass-card rounded-full font-label-caps text-label-caps text-[#00a3d7] uppercase tracking-wider text-[12px] font-semibold">20 Day Route</span>
-        </div>
-        <h2 class="font-display-lg text-display-lg text-[#1a237e] font-bold text-[34px] tracking-tight leading-tight">The Grand Loop</h2>
-        <p class="font-body-md text-body-md text-[#454652] mt-2 max-w-[85%] text-[15px]">A seamless journey from Seoul's neon skyscrapers to the ancient temples of Gyeongju and the coastal energy of Busan.</p>
-      </section>
-
+    <main class="relative pt-[40px] pb-[120px] px-[20px]">
       <div class="relative mt-[24px]">
         <div class="absolute left-[18px] top-4 bottom-4 timeline-line opacity-20"></div>
         
@@ -129,6 +110,7 @@ export class ItineraryScreenComponent implements OnInit {
   days: ItineraryDay[] = [];
   expandedDay: number | null = null;
   
+  private cdr = inject(ChangeDetectorRef);
   private lastTouchY = 0;
   private isAtBottomCount = 0;
 
@@ -137,7 +119,9 @@ export class ItineraryScreenComponent implements OnInit {
       .then(res => res.json())
       .then(data => {
         this.days = data;
-      });
+        this.cdr.detectChanges();
+      })
+      .catch(err => console.error('Error fetching itinerary:', err));
   }
 
   getDotClass(index: number) {
