@@ -26,7 +26,7 @@ import { EmergencyModalComponent } from '../../shared/components/organisms/emerg
     <main class="content-area">
       <!-- Large Header Title -->
       <div>
-        <h1 class="header-title">Descubre Corea</h1>
+        <h1 class="header-title">Corea Agosto 2026</h1>
       </div>
 
       <!-- Hero Destination Card (Weather & City) -->
