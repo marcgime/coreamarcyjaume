@@ -1,34 +1,44 @@
-# Logs
-logs
-*.log
-npm-debug.log*
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
 
-# Dependency directories
-node_modules/
-jspm_packages/
-
-# Optional npm cache directory
-.npm
-
-# Output directory
-dist/
-build/
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
 
 # IDEs and editors
 .idea/
-.vscode/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
 
-# OS metadata
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/mcp.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+__screenshots__/
+
+# System files
 .DS_Store
 Thumbs.db
