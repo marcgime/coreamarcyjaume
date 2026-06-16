@@ -1,16 +1,24 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IconComponent } from '../atoms/icon.component';
 
 @Component({
   selector: 'app-nav-item',
   standalone: true,
-  imports: [CommonModule, IconComponent],
+  imports: [CommonModule, RouterLink, RouterLinkActive, IconComponent],
   template: `
-    <a [ngClass]="['nav-item', active ? 'active' : '']" href="#" (click)="$event.preventDefault()">
-      <app-icon [name]="icon" size="24px" [color]="active ? '#00a3d7' : '#454652'"></app-icon>
-      <span class="nav-label">{{ label }}</span>
-    </a>
+    @if (link) {
+      <a [routerLink]="link" [routerLinkActiveOptions]="linkOptions" routerLinkActive="active" #rla="routerLinkActive" class="nav-item">
+        <app-icon [name]="icon" size="24px" [color]="rla.isActive ? '#00a3d7' : '#454652'"></app-icon>
+        <span class="nav-label">{{ label }}</span>
+      </a>
+    } @else {
+      <a class="nav-item" href="#" (click)="$event.preventDefault()">
+        <app-icon [name]="icon" size="24px" color="#454652"></app-icon>
+        <span class="nav-label">{{ label }}</span>
+      </a>
+    }
   `,
   styles: [`
     .nav-item {
@@ -48,5 +56,6 @@ import { IconComponent } from '../atoms/icon.component';
 export class NavItemComponent {
   @Input({ required: true }) label!: string;
   @Input({ required: true }) icon!: string;
-  @Input() active: boolean = false;
+  @Input() link?: string;
+  @Input() linkOptions: { exact: boolean } = { exact: false };
 }

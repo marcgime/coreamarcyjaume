@@ -9,8 +9,8 @@ import { NavItemComponent } from '../molecules/nav-item.component';
   template: `
     <nav class="nav-container">
       <div class="nav-bar">
-        <app-nav-item label="Inicio" icon="home" [active]="true"></app-nav-item>
-        <app-nav-item label="Alojamiento" icon="bed" (click)="onNotImplemented()"></app-nav-item>
+        <app-nav-item label="Inicio" icon="home" link="/" [linkOptions]="{ exact: true }"></app-nav-item>
+        <app-nav-item label="Alojamiento" icon="bed" link="/alojamiento"></app-nav-item>
         <app-nav-item label="Ruta" icon="map" (click)="onNotImplemented()"></app-nav-item>
         <app-nav-item label="Transporte" icon="train" (click)="onNotImplemented()"></app-nav-item>
       </div>
