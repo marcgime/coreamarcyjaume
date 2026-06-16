@@ -26,24 +26,6 @@ import { IconComponent } from '../atoms/icon.component';
         </div>
 
         <div class="converter-container">
-          <!-- EUR Input -->
-          <div class="currency-input-group">
-            <div class="currency-info">
-              <span class="currency-flag">🇪🇺</span>
-              <div>
-                <div class="currency-code">EUR</div>
-                <div class="currency-name">Euro</div>
-              </div>
-            </div>
-            <input type="number" 
-                   [value]="exchangeService.eurValue()" 
-                   (input)="onEurInput($event)"
-                   class="currency-field" 
-                   placeholder="0" 
-                   min="0" 
-                   step="any">
-          </div>
-
           <!-- KRW Input -->
           <div class="currency-input-group">
             <div class="currency-info">
@@ -60,6 +42,24 @@ import { IconComponent } from '../atoms/icon.component';
                    placeholder="0" 
                    min="0" 
                    step="1">
+          </div>
+
+          <!-- EUR Input -->
+          <div class="currency-input-group">
+            <div class="currency-info">
+              <span class="currency-flag">🇪🇺</span>
+              <div>
+                <div class="currency-code">EUR</div>
+                <div class="currency-name">Euro</div>
+              </div>
+            </div>
+            <input type="number" 
+                   [value]="exchangeService.eurValue()" 
+                   (input)="onEurInput($event)"
+                   class="currency-field" 
+                   placeholder="0" 
+                   min="0" 
+                   step="any">
           </div>
 
           <!-- Rate Telemetry Info Box -->
