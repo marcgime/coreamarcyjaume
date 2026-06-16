@@ -277,6 +277,7 @@ h1 {
 .bento-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr; /* Dos filas del mismo tamaño */
   gap: 16px;
 }
 
@@ -302,17 +303,10 @@ h1 {
 }
 
 .bento-large {
-  grid-row: span 2;
-  aspect-ratio: 1; /* Cuadrado */
+  grid-row: span 2; /* Ocupa las dos filas */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.bento-row {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
 }
 
 .bento-small-card {
@@ -483,28 +477,30 @@ h1 {
 /* Fixed Bottom Navigation Capsule */
 .nav-container {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: calc(var(--safe-area-bottom) + 12px); /* Flota sobre el Home Indicator de Apple */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 40px); /* Margen elegante de 20px a cada lado */
+  max-width: 480px; /* Cápsula compacta y centrada */
   z-index: 100;
   display: flex;
   justify-content: center;
-  padding-bottom: var(--safe-area-bottom);
-  background: var(--glass-nav-bg);
+  background: rgba(255, 255, 255, 0.55);
   backdrop-filter: var(--glass-nav-blur);
   -webkit-backdrop-filter: var(--glass-nav-blur);
-  border-top: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 -4px 30px 0 rgba(26, 35, 126, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.65); /* Borde sutil y catch-light en 360 grados */
+  border-radius: 9999px; /* Forma de píldora tipo dock de Apple */
+  box-shadow: 0 10px 40px 0 rgba(26, 35, 126, 0.12); /* Sombra elegante e integrada */
+  padding-bottom: 0; /* No se necesita padding al flotar */
 }
 
 .nav-bar {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 64px;
+  height: 60px; /* Reducido levemente para mayor elegancia */
   width: 100%;
-  max-width: 600px;
-  padding: 0 16px;
+  padding: 0 12px;
 }
 
 .nav-item {

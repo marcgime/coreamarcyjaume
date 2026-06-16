@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
   
   <!-- Custom Glassmorphic Stylesheet -->
-  <link href="src/ui/css/style.css" rel="stylesheet">
+  <link href="src/ui/css/style.css?v=2" rel="stylesheet">
 </head>
 <body>
 
@@ -54,7 +54,7 @@
 
     <!-- Quick Actions Bento Grid (Translate, Currency, Emergencies) -->
     <section class="bento-grid">
-      <!-- 1. Translate Card (Large aspect-square) -->
+      <!-- 1. Translate Card (Large) -->
       <div class="glass-card bento-card bento-large bento-translate" id="btn-translate">
         <div class="bento-icon-wrapper">
           <span class="material-symbols-outlined">translate</span>
@@ -65,29 +65,26 @@
         </div>
       </div>
 
-      <!-- Right Column: Currency and Emergency Cards -->
-      <div class="bento-row">
-        <!-- 2. Currency Card -->
-        <div class="glass-card bento-small-card bento-currency" id="btn-currency">
-          <div class="flex-center-y">
-            <div class="bento-icon-wrapper">
-              <span class="material-symbols-outlined">payments</span>
-            </div>
-            <span class="bento-title" style="margin: 0; font-size: 16px;">Cambio</span>
+      <!-- 2. Currency Card -->
+      <div class="glass-card bento-small-card bento-currency" id="btn-currency">
+        <div class="flex-center-y">
+          <div class="bento-icon-wrapper">
+            <span class="material-symbols-outlined">payments</span>
           </div>
-          <span class="material-symbols-outlined text-outline">chevron_right</span>
+          <span class="bento-title" style="margin: 0; font-size: 16px;">Cambio</span>
         </div>
+        <span class="material-symbols-outlined text-outline">chevron_right</span>
+      </div>
 
-        <!-- 3. Emergency Card -->
-        <div class="bento-small-card bento-emergency" id="btn-emergency">
-          <div class="flex-center-y">
-            <div class="bento-icon-wrapper">
-              <span class="material-symbols-outlined">emergency</span>
-            </div>
-            <span class="bento-emergency-text">Emergencia</span>
+      <!-- 3. Emergency Card -->
+      <div class="bento-small-card bento-emergency" id="btn-emergency">
+        <div class="flex-center-y">
+          <div class="bento-icon-wrapper">
+            <span class="material-symbols-outlined">emergency</span>
           </div>
-          <span class="material-symbols-outlined text-error">chevron_right</span>
+          <span class="bento-emergency-text">Emergencia</span>
         </div>
+        <span class="material-symbols-outlined text-error">chevron_right</span>
       </div>
     </section>
 
@@ -159,13 +156,6 @@
             </div>
           </div>
           <input type="number" id="calc-eur" class="currency-field" placeholder="0" min="0" step="any">
-        </div>
-
-        <!-- Exchange Icon Divider -->
-        <div class="exchange-arrow-wrapper">
-          <div class="exchange-arrow-btn">
-            <span class="material-symbols-outlined">sync_alt</span>
-          </div>
         </div>
 
         <!-- KRW input -->
