@@ -1,0 +1,182 @@
+[
+  {
+    "day": 1,
+    "date": "06 de agosto",
+    "location": "Seúl",
+    "title": "Llegada e inmersión inicial",
+    "description": "**Mañana/Tarde:** Llegada al Aeropuerto Internacional de Incheon. Traslado en el tren AREX Express directo a la ciudad. Check-in en el hotel ubicado en el distrito histórico de Insadong.\n\n**Atardecer:** Paseo fotográfico siguiendo el curso recuperado del arroyo Cheonggyecheon, viendo cómo se encienden los rascacielos del centro financiero.\n\n**Noche:** Cena informal en los callejones laberínticos de casas hanok restauradas de Ikseon-dong, un enclave lleno de pequeños restaurantes de fusión y luces de verbena.",
+    "tags": ["Llegada", "Hanok", "Nocturno"],
+    "image": "https://loremflickr.com/800/600/seoul,night,city/all"
+  },
+  {
+    "day": 2,
+    "date": "07 de agosto",
+    "location": "Seúl",
+    "title": "El corazón dinástico",
+    "description": "**Mañana (08:00):** Entrada a primera hora al palacio Gyeongbokgung para fotografiar su simetría antes de las masas. Presenciar el cambio de guardia tradicional (10:00). Continuación a pie hacia la aldea tradicional de Bukchon Hanok Village, respetando el silencio de los residentes.\n\n**Tarde:** Descenso hacia el barrio de Insadong para explorar galerías de arte local y tiendas de caligrafía. Pausa para un té frío tradicional en un patio interior para combatir el calor de agosto.\n\n**Atardecer:** Subida en autobús público o teleférico al monte Namsan para coronar la N Seoul Tower. Captura panorámica de la inmensidad de la capital durante la hora azul.\n\n**Noche:** Descenso hacia el bullicio de Myeongdong para experimentar la comida callejera nocturna.",
+    "tags": ["Palacios", "Vistas", "Street Food"],
+    "image": "https://loremflickr.com/800/600/seoul,palace,traditional/all"
+  },
+  {
+    "day": 3,
+    "date": "08 de agosto",
+    "location": "Seúl",
+    "title": "Arquitectura y vanguardia",
+    "description": "**Mañana:** Visita al palacio Changdeokgung con acceso reservado previamente para su Jardín Secreto (Huwon), donde la arquitectura palaciega se integra de forma orgánica con la naturaleza boscosa.\n\n**Tarde:** Desplazamiento hacia la Dongdaemun Design Plaza (DDP), la obra maestra neofuturista de Zaha Hadid. Exploración de sus líneas curvas interiores y exteriores.\n\n**Atardecer:** Caminar por las murallas antiguas de la fortaleza de Seúl en el Parque Naksan, capturando el contraste entre la piedra medieval iluminada y la ciudad moderna al fondo.\n\n**Noche:** Exploración del barrio universitario de Hongdae, famoso por su ambiente callejero, músicos en directo (busking) y diseño independiente.",
+    "tags": ["Arquitectura", "Arte", "Hongdae"],
+    "image": "https://loremflickr.com/800/600/seoul,ddp,modern/all"
+  },
+  {
+    "day": 4,
+    "date": "09 de agosto",
+    "location": "Seúl → Sokcho",
+    "title": "Rumbo a la costa este",
+    "description": "**Mañana (08:00):** Salida en autobús exprés premium desde la terminal de Seúl hacia Sokcho (Costa Este). Al llegar, check-in en el hotel frente al puerto o mar.\n\n**Tarde:** Traslado corto en autobús local al espectacular Templo Naksansa, un complejo budista erigido sobre los acantilados que miran al Mar del Este. Es un spot fotográfico de primer nivel por su gran estatua de la diosa de la misericordia orientada al océano.\n\n**Atardecer:** Vistas y fotografías desde el pabellón de madera Yeonggeumjeong, construido sobre rocas costeras donde rompen las olas.\n\n**Noche:** Cena en el Sokcho Tourist & Fishery Market, degustando el plato local Dakgangjeong (pollo frito crujiente agridulce) y pescado fresco.",
+    "tags": ["Costa", "Templos", "Marisco"],
+    "image": "https://loremflickr.com/800/600/sokcho,temple,ocean/all"
+  },
+  {
+    "day": 5,
+    "date": "10 de agosto",
+    "location": "Sokcho",
+    "title": "Alta montaña en Seoraksan",
+    "description": "**Mañana (07:30):** Entrada temprana al Parque Nacional Seoraksan para evitar el calor del mediodía. Ascenso en el teleférico hacia la antigua fortaleza de roca de Gwongeumseong para obtener vistas panorámicas brutales de los picos afilados.\n\n**Tarde:** Senderismo ligero hacia la cascada Biryong o paseo fotográfico por el templo Sinheungsa, contemplando el monumental Buda de bronce de 14 metros de altura.\n\n**Atardecer:** Paseo por Abai Village, un antiguo asentamiento de refugiados de Corea del Norte. Se cruza el canal en los barcos tradicionales guiados por cable (gaess배).\n\n**Noche:** Cena de Abai Sundae (morcilla calamar local cocinada al vapor) en el puerto.",
+    "tags": ["Naturaleza", "Montaña", "Cultura"],
+    "image": "https://loremflickr.com/800/600/seoraksan,mountain,korea/all"
+  },
+  {
+    "day": 6,
+    "date": "11 de agosto",
+    "location": "Sokcho → Gyeongju",
+    "title": "Tránsito hacia el Reino de Silla",
+    "description": "**Mañana:** Salida en autobús interurbano que recorre la línea de la costa este en dirección sur hacia Gyeongju (la antigua capital del Reino de Silla).\n\n**Tarde:** Llegada a Gyeongju, check-in en un alojamiento tipo Hanok boutique en las inmediaciones del centro histórico. Paseo de orientación por la vibrante calle Hwangridan-gil, admirando la reconversión de casas antiguas en cafés de especialidad.\n\n**Atardecer:** Fotografía de los perfiles suaves del Parque de los Túmulos de Daereungwon con la luz dorada de la tarde filtrándose entre los árboles.\n\n**Noche:** Paseo nocturno relajado por los senderos iluminados que rodean las tumbas reales históricas.",
+    "tags": ["Historia", "Hanok", "Cafés"],
+    "image": "https://loremflickr.com/800/600/gyeongju,tumuli,sunset/all"
+  },
+  {
+    "day": 7,
+    "date": "12 de agosto",
+    "location": "Gyeongju",
+    "title": "Historia viva y simetrías antiguas",
+    "description": "**Mañana (08:00):** Traslado al Templo Bulguksa, la cumbre del diseño arquitectónico budista del Reino de Silla. Fotografiar los puentes de piedra y las pagodas Seokgatap y Dabotap antes de la llegada de excursiones locales.\n\n**Tarde:** Ascenso a la Gruta de Seokguram para contemplar el Buda de granito blanco mirando hacia el este. Regreso al centro para visitar el observatorio astronómico de piedra Cheomseongdae (siglo VII).\n\n**Atardecer/Noche:** Sesión fotográfica imprescindible en el Palacio Donggung y Estanque Wolji. La iluminación arquitectónica nocturna se refleja perfectamente en el agua inmóvil, ofreciendo una de las estampas más bellas de toda Corea.",
+    "tags": ["Patrimonio", "Fotografía", "Nocturno"],
+    "image": "https://loremflickr.com/800/600/gyeongju,donggung,night/all"
+  },
+  {
+    "day": 8,
+    "date": "13 de agosto",
+    "location": "Gyeongju → Daegu",
+    "title": "El Tesoro Oculto de Haeinsa",
+    "description": "**Mañana (08:00):** Tren rápido KTX desde Gyeongju hasta la estación de Dongdaegu (17 minutos). Dejar el equipaje en las consignas automáticas de la estación o check-in rápido en un hotel de la zona céntrica de Banwoldang. Traslado en autobús interurbano desde la terminal Seobu hacia el Parque Nacional Gayasan.\n\n**Tarde:** Inmersión en el imponente Templo Haeinsa, uno de los tres templos de la joya de Corea. Exploración de los pabellones traseros Janggyeong Panjeon, donde se custodian las más de 80.000 planchas de impresión de madera del siglo XIII de la Tripitaka Coreana.\n\n**Atardecer:** Regreso a Daegu. Paseo por la calle artística Kim Kwang-seok Road, un callejón peatonal lleno de murales, arte urbano y pequeños cafés.\n\n**Noche:** Cena en el multitudinario Mercado Nocturno de Seomun probando Makchang.",
+    "tags": ["Templo", "Cultura", "Gastronomía"],
+    "image": "https://loremflickr.com/800/600/daegu,temple,korea/all"
+  },
+  {
+    "day": 9,
+    "date": "14 de agosto",
+    "location": "Daegu → Busan",
+    "title": "La gran metrópolis del sur",
+    "description": "**Mañana (08:30):** Tren de alta velocidad KTX desde Daegu a Busan (45 minutos). Check-in en un hotel boutique bien comunicado en Seomyeon o frente a la playa de Haeundae.\n\n**Tarde:** Traslado al fotogénico Gamcheon Culture Village, un barrio construido en terrazas sobre las laderas de la montaña, famoso por sus fachadas de colores pastel, murales y callejones laberínticos.\n\n**Atardecer:** Desplazamiento a la playa de Gwangalli. El mirador óptimo es desde la arena o una cafetería elevada, observando cómo se encienden las luces del monumental puente colgante Gwangan.\n\n**Noche:** Cena de marisco fresco o Dwaeji Gukbap en los alrededores de la playa.",
+    "tags": ["Ciudad", "Mar", "Arte Urbano"],
+    "image": "https://loremflickr.com/800/600/busan,gamcheon,village/all"
+  },
+  {
+    "day": 10,
+    "date": "15 de agosto",
+    "location": "Busan",
+    "title": "Océano y templos colgados",
+    "description": "**Mañana (08:00):** Visita al templo budista Haedong Yonggungsa, una rareza construida directamente sobre las rocas de la escarpada costa oceánica. La luz matutina incidiendo sobre el mar y los tejados del templo ofrece un encuadre fotográfico perfecto.\n\n**Tarde:** Regreso hacia la playa de Haeundae y paseo a bordo del Haeundae Blue Line Park, utilizando las icónicas y pequeñas cápsulas de colores aéreas (Sky Capsule) que se desplazan sobre las vías del antiguo tren de la costa.\n\n**Atardecer:** Caminar por la pasarela de madera de la isla Dongbaekseom hasta llegar al faro, observando el atardecer sobre los rascacielos residenciales de Marine City.\n\n**Noche:** Exploración del mercado nocturno de comida tradicional de Haeundae.",
+    "tags": ["Templo Costero", "Sky Capsule", "Playa"],
+    "image": "https://loremflickr.com/800/600/busan,haedong,ocean/all"
+  },
+  {
+    "day": 11,
+    "date": "16 de agosto",
+    "location": "Busan",
+    "title": "La vida del puerto y joyas ocultas",
+    "description": "**Mañana:** Visita al caótico y vibrante Mercado de Pescado de Jagalchi, el más grande de Corea, observando la labor diaria de las vendedoras locales (Jagalchi Ajumma).\n\n**Tarde:** Desplazamiento al pintoresco barrio costero de Huinnyeoul Culture Village en la isla de Yeongdo. Es una joya oculta de casas blancas y azules construidas sobre un acantilado marino, con senderos repletos de librerías y cafés.\n\n**Atardecer:** Subida al observatorio de la azotea de los grandes almacenes Lotte Department Store en Gwangbok para una panorámica limpia de 360 grados del puerto de Busan y sus puentes basculantes.\n\n**Noche:** Paseo por el distrito financiero y comercial iluminado de Nampodong.",
+    "tags": ["Mercado", "Vistas Panorámicas", "Cafés"],
+    "image": "https://loremflickr.com/800/600/busan,jagalchi,port/all"
+  },
+  {
+    "day": 12,
+    "date": "17 de agosto",
+    "location": "Busan → Jeonju",
+    "title": "Hacia la capital gastronómica",
+    "description": "**Mañana (08:30):** Salida en autobús exprés directo desde Busan (Terminal Sasang o Nopo) hacia Jeonju (aproximadamente 3 horas de trayecto).\n\n**Tarde:** Llegada a Jeonju y check-in en una casa Hanok tradicional dentro de la Jeonju Hanok Village. Exploración a pie de este recinto histórico que preserva más de 800 tejados curvos tradicionales.\n\n**Atardecer:** Subida suave a la colina boscosa de Omokdae para capturar con el teleobjetivo la impresionante panorámica de los cientos de tejados grises de teja tradicionales.\n\n**Noche:** Disfrutar del ambiente calmado de la aldea iluminada por farolillos tradicionales.",
+    "tags": ["Hanok", "Relax", "Historia"],
+    "image": "https://loremflickr.com/800/600/jeonju,hanok,roofs/all"
+  },
+  {
+    "day": 13,
+    "date": "18 de agosto",
+    "location": "Jeonju",
+    "title": "Tradición y cultura de taberna",
+    "description": "**Mañana:** Visita al santuario histórico Gyeonggijeon, que alberga el único retrato superviviente del rey Taejo. Visita posterior a la sorprendente Catedral católica de Jeondong.\n\n**Tarde:** Tiempo libre para explorar los talleres de papel tradicional (Hanji) y probar el plato estrella de la ciudad: el auténtico Jeonju Bibimbap en un restaurante local histórico.\n\n**Atardecer:** Vista tranquila desde los ventanales elevados del café de diseño 'Tomorrow' o zonas altas de los callejones residenciales.\n\n**Noche:** Experiencia local genuina en los callejones de tabernas de Makgeolli con decenas de pequeños platos de comida (banchan).",
+    "tags": ["Gastronomía", "Cultura", "Makgeolli"],
+    "image": "https://loremflickr.com/800/600/jeonju,food,traditional/all"
+  },
+  {
+    "day": 14,
+    "date": "19 de agosto",
+    "location": "Jeonju → Jeju",
+    "title": "Rumbo al sur volcánico",
+    "description": "**Mañana (07:30):** Autobús exprés directo desde Jeonju hacia la terminal o directamente al Aeropuerto de Seúl Gimpo.\n\n**Tarde:** Vuelo de corta duración (1h) hacia el Aeropuerto Internacional de Jeju. Recogida inmediata del coche de alquiler. Conducción hacia la Costa Norte de la isla. Check-in en el hotel seleccionado (zona Hamdeok o Seogwipo).\n\n**Atardecer:** Fotografía de los primeros paisajes de piedra volcánica negra junto a la orilla del mar en la pintoresca playa de Hyeopjae.\n\n**Noche:** Cena en el animado mercado nocturno tradicional de Dongmun en Jeju City, famoso por sus brochetas a la llama.",
+    "tags": ["Vuelo", "Naturaleza", "Playa Volcánica"],
+    "image": "https://loremflickr.com/800/600/jeju,beach,ocean/all"
+  },
+  {
+    "day": 15,
+    "date": "20 de agosto",
+    "location": "Isla de Jeju",
+    "title": "El paisaje icónico del este",
+    "description": "**Mañana (07:00):** Trayecto por carretera hacia el extremo oriental para realizar el ascenso escalonado al cono volcánico inactivo de Seongsan Ilchulbong (Pico del Amanecer), que emerge de forma vertical sobre el océano.\n\n**Tarde:** Desplazamiento a la cueva de lava de Manjanggul, uno de los túneles de lava más largos del mundo. Su temperatura interior constante de 12°C es ideal para agosto. Continuación hacia las aguas turquesas de la playa de Hamdeok.\n\n**Atardecer:** Paseo por los senderos verdes del cabo Seopjikoji, capturando la silueta del faro recortada contra el horizonte marino.\n\n**Noche:** Cena de marisco variado o pescado plano a la brasa en el pueblo pesquero de Seongsan.",
+    "tags": ["Volcán", "Naturaleza", "Marisco"],
+    "image": "https://loremflickr.com/800/600/jeju,seongsan,nature/all"
+  },
+  {
+    "day": 16,
+    "date": "21 de agosto",
+    "location": "Isla de Jeju",
+    "title": "Acantilados y cascadas del sur",
+    "description": "**Mañana:** Ruta en coche hacia el sur (Seogwipo). Visita a la singular cascada Jeongbang, la única en Asia cuyo curso de agua cae de manera vertical y directa al oleaje del océano abierto.\n\n**Tarde:** Caminata fotográfica para admirar las columnas hexagonales perfectas de basalto de los acantilados de Jusangjeolli, esculpidas por la lava. Visita posterior a las plantaciones de té verde de O'sulloc para probar helado de matcha orgánico.\n\n**Atardecer:** Conducción relajada por los acantilados costeros de la carretera escénica de Aewol.\n\n**Noche:** Cena en la zona del mercado de Seogwipo Daily Olle Market.",
+    "tags": ["Cascadas", "Acantilados", "Té Verde"],
+    "image": "https://loremflickr.com/800/600/jeju,waterfall,cliff/all"
+  },
+  {
+    "day": 17,
+    "date": "22 de agosto",
+    "location": "Isla de Jeju",
+    "title": "Aventura opcional o Isla Udo",
+    "description": "**Mañana/Tarde:** Opción A: Exploración de los senderos boscosos de menor dificultad que flanquean la base del volcán Hallasan. Opción B: Conducir el coche hasta el puerto de Seongsan, embarcarlo en el ferry hacia la pequeña Isla de Udo, y recorrer sus playas de arena de coral blanco en bicicleta.\n\n**Atardecer:** Regreso al puerto principal y captura fotográfica de los barcos pesqueros tradicionales de Jeju encendiendo sus potentes focos para la pesca nocturna del calamar.\n\n**Noche:** Cena relajada de fideos locales tradicionales en caldo de cerdo (Gogi Guksu).",
+    "tags": ["Aventura", "Islas", "Senderismo"],
+    "image": "https://loremflickr.com/800/600/jeju,udo,island/all"
+  },
+  {
+    "day": 18,
+    "date": "23 de agosto",
+    "location": "Isla de Jeju → Seúl",
+    "title": "El retorno urbano",
+    "description": "**Mañana:** Devolución del coche de alquiler en el aeropuerto de Jeju y vuelo doméstico de regreso a Seúl (Gimpo). Traslado rápido en metro o taxi al hotel en el moderno barrio de Seongsu-dong o Hannam-dong.\n\n**Tarde:** Exploración a pie de Seongsu-dong, conocido como el 'Brooklyn coreano'. Antigua zona industrial reconvertida hoy en concept stores vanguardistas y cafeterías de diseño arquitectónico.\n\n**Atardecer:** Subida al mirador urbano oculto de la azotea del complejo cultural Musinsa Terrace o pasear por la ribera norte del río.\n\n**Noche:** Cena informal de cocina contemporánea en Seongsu.",
+    "tags": ["Vuelo", "Vanguardia", "Urbano"],
+    "image": "https://loremflickr.com/800/600/seoul,seongsu,cafe/all"
+  },
+  {
+    "day": 19,
+    "date": "24 de agosto",
+    "location": "Seúl",
+    "title": "Museos de arte y despedida junto al río",
+    "description": "**Mañana (09:00):** Entrada reservada para el Museo de Arte Leeum, en el elegante barrio de Hannam-dong. Su arquitectura exterior e interior es tan impresionante como la colección de arte que alberga.\n\n**Tarde:** Paseo por las sofisticadas tiendas de diseño independiente, librerías conceptuales y tiendas insignia de marcas coreanas de culto en el distrito de Hannam-dong.\n\n**Atardecer/Noche:** Picnic de despedida tradicional comprando pollo frito crujiente y cerveza local (Chimaek) para tomar sobre el césped del Parque del Río Han (área de Banpo). Observación del espectáculo de luces y fuentes de agua del puente de Banpo.",
+    "tags": ["Arte", "Despedida", "Río Han"],
+    "image": "https://loremflickr.com/800/600/seoul,hanriver,night/all"
+  },
+  {
+    "day": 20,
+    "date": "25 de agosto",
+    "location": "Seúl → Barcelona",
+    "title": "Últimos encuadres y salida",
+    "description": "**Mañana (08:30):** Para evitar multitudes, visita a primera hora a la monumental Starfield Library dentro del Coex Mall en Gangnam para capturar la icónica fotografía angular de las estanterías de 13 metros de altura.\n\n**Tarde:** Regreso al hotel para recoger el equipaje. Traslado en el tren express AREX hacia el Aeropuerto Internacional de Incheon. Trámites de facturación, devolución de impuestos (Tax Refund) y embarque en el vuelo de regreso con destino final Barcelona por la tarde.",
+    "tags": ["Librería", "Gangnam", "Regreso"],
+    "image": "https://loremflickr.com/800/600/seoul,library,coex/all"
+  }
+]
