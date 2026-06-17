@@ -8,7 +8,6 @@ interface ItineraryDay {
   title: string;
   description: string;
   tags: string[];
-  image: string;
 }
 
 @Component({
@@ -53,15 +52,6 @@ interface ItineraryDay {
                 
                 <div class="flex flex-wrap gap-2 mt-2">
                   <span *ngFor="let tag of item.tags" class="glass-card px-2 py-1 rounded-lg font-caption text-caption text-[#1a237e] text-[11px]">{{tag}}</span>
-                </div>
-                
-                <div class="h-48 w-full rounded-lg overflow-hidden mt-2 relative">
-                  <img [src]="item.image" [alt]="item.title" class="w-full h-full object-cover">
-                  <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div class="absolute bottom-2 left-2 flex items-center gap-1">
-                    <span class="material-symbols-outlined text-white text-[14px]">photo_camera</span>
-                    <span class="text-white text-caption font-caption text-[11px]">{{item.location}}</span>
-                  </div>
                 </div>
               </div>
               
