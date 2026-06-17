@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 interface ItineraryDay {
   day: number;
@@ -19,7 +20,7 @@ interface ItineraryDay {
       <div class="relative mt-[24px]">
         <div class="absolute left-[18px] top-4 bottom-4 timeline-line opacity-20"></div>
         
-        <div *ngFor="let item of days; let i = index" class="relative pl-14 mb-[20px] group">
+        <div *ngFor="let item of days; let i = index" [id]="'day-' + i" class="relative pl-14 mb-[20px] group">
           <!-- Bolita del día -->
           <div class="absolute left-0 top-0 w-10 h-10 rounded-full flex items-center justify-center z-10 shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
                [ngClass]="getDotClass(i)"
@@ -116,12 +117,37 @@ export class ItineraryScreenComponent implements OnInit {
   expandedDay: number | null = null;
   
   private cdr = inject(ChangeDetectorRef);
+  private route = inject(ActivatedRoute);
 
   ngOnInit() {
     fetch('assets/data/itinerary.json')
       .then(res => res.json())
       .then(data => {
         this.days = data;
+        
+        // Handle auto-opening the current day
+        const openCurrent = this.route.snapshot.queryParamMap.get('openCurrent');
+        if (openCurrent === 'true' && this.days.length > 0) {
+          const today = new Date();
+          const day = String(today.getDate()).padStart(2, '0');
+          const months = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+          const month = months[today.getMonth()];
+          const todayStr = `${day} de ${month}`; // "06 de agosto"
+          
+          const currentIndex = this.days.findIndex(d => d.date.toLowerCase().includes(todayStr.toLowerCase()));
+          
+          // Si no encontramos el día, abrimos el primer día (index 0)
+          this.expandedDay = currentIndex >= 0 ? currentIndex : 0;
+          
+          // Hacemos scroll al día expandido con un pequeño retraso para que el DOM se haya renderizado
+          setTimeout(() => {
+            const el = document.getElementById('day-' + this.expandedDay);
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          }, 100);
+        }
+        
         this.cdr.detectChanges();
       })
       .catch(err => console.error('Error fetching itinerary:', err));

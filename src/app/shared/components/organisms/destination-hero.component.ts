@@ -1,5 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 import { LocationService } from '../../../core/services/location.service';
 import { WeatherService } from '../../../core/services/weather.service';
 import { BadgeComponent } from '../atoms/badge.component';
@@ -50,7 +51,7 @@ import { IconComponent } from '../atoms/icon.component';
         <h2 class="hero-title">{{ locationService.currentCity() }}, {{ locationService.countryCode() }}</h2>
         <p class="hero-desc">Explora el corazón tecnológico y tradicional de la península coreana.</p>
         
-        <button class="hero-btn glass-card" (click)="$event.preventDefault()">
+        <button class="hero-btn glass-card" (click)="goToItinerary($event)">
           <div class="shimmer"></div>
           <span>Ver Itinerario</span>
           <app-icon name="arrow_forward" size="18px" color="#ffffff"></app-icon>
@@ -238,6 +239,7 @@ import { IconComponent } from '../atoms/icon.component';
 export class DestinationHeroComponent {
   locationService = inject(LocationService);
   weatherService = inject(WeatherService);
+  router = inject(Router);
 
   currentSlide = signal(0);
 
@@ -324,6 +326,11 @@ export class DestinationHeroComponent {
     if (this.currentSlide() !== index) {
       this.currentSlide.set(index);
     }
+  }
+
+  goToItinerary(event: Event) {
+    event.preventDefault();
+    this.router.navigate(['/ruta'], { queryParams: { openCurrent: 'true' } });
   }
 }
 
