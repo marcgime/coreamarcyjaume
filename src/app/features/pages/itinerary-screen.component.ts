@@ -19,42 +19,47 @@ interface ItineraryDay {
       <div class="relative mt-[24px]">
         <div class="absolute left-[18px] top-4 bottom-4 timeline-line opacity-20"></div>
         
-        <div *ngFor="let item of days; let i = index" class="relative pl-12 mb-[24px] group">
-          <div class="absolute left-0 top-6 w-10 h-10 rounded-full flex items-center justify-center z-10 shadow-lg transition-transform group-active:scale-90"
-               [ngClass]="getDotClass(i)">
-            <span class="material-symbols-outlined text-white text-[20px]" style="font-variation-settings: 'FILL' 1;">{{getIcon(i)}}</span>
+        <div *ngFor="let item of days; let i = index" class="relative pl-14 mb-[20px] group">
+          <!-- Bolita del día -->
+          <div class="absolute left-0 top-0 w-10 h-10 rounded-full flex items-center justify-center z-10 shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
+               [ngClass]="getDotClass(i)"
+               (click)="toggleDay(i)">
+            <span class="text-white font-bold text-[16px]">{{item.day}}</span>
           </div>
           
-          <div class="flex flex-col gap-4">
-            <h3 class="font-headline-sm text-headline-sm text-[20px] font-semibold" [ngClass]="getTextClass(i)">{{item.location}}</h3>
+          <div class="flex flex-col">
+            <!-- Ubicación del día (Visible siempre) -->
+            <div class="flex flex-col justify-center min-h-[40px] cursor-pointer" (click)="toggleDay(i)">
+              <h3 class="font-headline-sm text-[18px] font-semibold leading-tight" [ngClass]="getTextClass(i)">
+                {{item.location}}
+              </h3>
+              <span class="text-[12px] text-[#454652] mt-0.5 flex items-center gap-1">
+                <span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                {{item.date}}
+              </span>
+            </div>
             
-            <div #dayCard class="glass-card rounded-xl p-4 flex flex-col gap-3 relative overflow-hidden transition-all duration-300 cursor-pointer"
-                 (click)="toggleDay(i)">
-              
+            <!-- Detalles expandidos -->
+            <div *ngIf="expandedDay === i" class="glass-card rounded-xl p-4 mt-2 flex flex-col gap-3 relative overflow-hidden transition-all duration-300 animate-fade-in">
               <div class="flex justify-between items-start">
-                <div>
-                  <span class="font-label-caps text-label-caps text-[12px] font-semibold uppercase tracking-wider" [ngClass]="getTextClass(i)">DÍA {{item.day < 10 ? '0'+item.day : item.day}}</span>
-                  <h4 class="font-headline-sm text-headline-sm text-[#1a1c1f] mt-1 text-[20px] font-semibold">{{item.title}}</h4>
-                </div>
-                <span class="material-symbols-outlined" [ngClass]="getTextClass(i)">
-                  {{ expandedDay === i ? 'expand_less' : 'expand_more' }}
+                <h4 class="font-headline-sm text-headline-sm text-[#1a1c1f] text-[18px] font-semibold">{{item.title}}</h4>
+                <span class="material-symbols-outlined cursor-pointer hover:bg-black/5 rounded-full p-1 -mr-1 -mt-1 transition-colors" [ngClass]="getTextClass(i)" (click)="toggleDay(i)">
+                  close
                 </span>
               </div>
               
-              <div class="flex items-center text-[#454652] text-[13px] gap-1 -mt-2">
+              <div class="flex items-center text-[#454652] text-[13px] gap-1 -mt-1">
                  <span class="material-symbols-outlined text-[16px]">calendar_today</span>
                  {{item.date}}
               </div>
               
-              <!-- Detalles expandidos -->
-              <div *ngIf="expandedDay === i" class="flex flex-col gap-3 mt-2 animate-fade-in max-h-[50vh] overflow-y-auto custom-scroll pr-1" #scrollContainer>
+              <div class="flex flex-col gap-3 mt-1 max-h-[50vh] overflow-y-auto custom-scroll pr-1">
                 <p class="font-body-md text-body-md text-[#454652] text-[15px]" [innerHTML]="formatDescription(item.description)"></p>
                 
                 <div class="flex flex-wrap gap-2 mt-2">
                   <span *ngFor="let tag of item.tags" class="glass-card px-2 py-1 rounded-lg font-caption text-caption text-[#1a237e] text-[11px]">{{tag}}</span>
                 </div>
               </div>
-              
             </div>
           </div>
         </div>
@@ -122,24 +127,31 @@ export class ItineraryScreenComponent implements OnInit {
   }
 
   getDotClass(index: number) {
-    const cycle = index % 3;
-    if (cycle === 0) return 'bg-[#1a237e] shadow-[#1a237e]/20'; // primary
-    if (cycle === 1) return 'bg-[#864e5a] shadow-[#864e5a]/20'; // secondary color
-    return 'bg-[#00a3d7] shadow-[#00a3d7]/20'; // tertiary
+    const colors = [
+      'bg-[#1a237e] shadow-[#1a237e]/20',
+      'bg-[#864e5a] shadow-[#864e5a]/20',
+      'bg-[#00a3d7] shadow-[#00a3d7]/20',
+      'bg-[#2e7d32] shadow-[#2e7d32]/20',
+      'bg-[#ef6c00] shadow-[#ef6c00]/20',
+      'bg-[#6a1b9a] shadow-[#6a1b9a]/20',
+      'bg-[#c62828] shadow-[#c62828]/20',
+      'bg-[#00838f] shadow-[#00838f]/20',
+    ];
+    return colors[index % colors.length];
   }
 
   getTextClass(index: number) {
-    const cycle = index % 3;
-    if (cycle === 0) return 'text-[#1a237e]';
-    if (cycle === 1) return 'text-[#864e5a]';
-    return 'text-[#00a3d7]';
-  }
-
-  getIcon(index: number) {
-    const cycle = index % 3;
-    if (cycle === 0) return 'location_on';
-    if (cycle === 1) return 'history_edu';
-    return 'waves';
+    const colors = [
+      'text-[#1a237e]',
+      'text-[#864e5a]',
+      'text-[#00a3d7]',
+      'text-[#2e7d32]',
+      'text-[#ef6c00]',
+      'text-[#6a1b9a]',
+      'text-[#c62828]',
+      'text-[#00838f]',
+    ];
+    return colors[index % colors.length];
   }
 
   formatDescription(desc: string) {
