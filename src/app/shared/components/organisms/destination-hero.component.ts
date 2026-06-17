@@ -306,11 +306,11 @@ export class DestinationHeroComponent {
       }
     }
     
-    // Default fallback si la ciudad no está en la lista
+    // Default fallback si la ciudad no está en la lista (imágenes del mundo)
     return [
-      'https://images.unsplash.com/photo-1515091943-9f5c0bba62db?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1526512340742-127e99216b23?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1591118128399-5ea06bdcf10f?q=80&w=800&auto=format&fit=crop'
+      'https://images.unsplash.com/photo-1589519160732-57fc498494f8?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=800&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop'
     ];
   });
 
