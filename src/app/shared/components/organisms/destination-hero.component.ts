@@ -260,39 +260,39 @@ export class DestinationHeroComponent {
         'https://lh3.googleusercontent.com/gps-cs-s/APNQkAEEPQ6Vd7nf6wyv5vYb_5A5pJHm-s5NkQV5_FrzzopCQHXtb6g5sd9vxUqc345PZYDS6Wecs5Cc5fXhq4UVBV-IdNAcycw1-y1hJo6LPq6qATttO-5A8Wq1iKXvV7AUGcJal_-FbiEfn45z=w610-h353-n-k-no'
       ],
       'jeju': [
-        'https://images.unsplash.com/photo-1542456488-bd98ec4e1f74?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1634707163884-2396e9526e03?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1611099684175-9b8e21de65ff?q=80&w=800&auto=format&fit=crop'
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAG5FqPXZO1RSTTVtWOAoZhndVjBnpewFqsHhDmku9q0bQdwjP0d2c4dsXHHHnSaFIRor5vPb1QWjEUHcJKNmeLiFyoiM_o64C6fLY1Ga-UL8TTwM0w6C3hHIL2V0F-VrnLXEwr2_Q=w610-h353-n-k-no',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAH_xZ_sqXaBbUlpH1j7LKr9H_hL05_wH-HOQE9TYEXKs4F8MHLOsOJFalXOOvs5P9yrbjNtxVsTFrr_rz4-D6HKWKxZAJAb-4YK_acQsQdyrsp9J_DgbdElGFEG1byhncJr2OW9=w610-h353-n-k-no',
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTaukBuCdpMM0k_Gm5paJraaZmXmMdxKIfPNVy55Ii5zD8xbNRbQPrR2KTzWujXQsGqV_VgxaALxiMTON8GbqLQrsQ&s=19'
       ],
       'incheon': [
-        'https://images.unsplash.com/photo-1590487988256-9ed24133863e?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1515091943-9f5c0bba62db?q=80&w=800&auto=format&fit=crop'
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSRWbh6rLKySCWzZIQ8CPElmIUF2reBA7RpW-MtYiFS1CBQlv9mAjlxLvYLaZ76zVI02a8n51ywabCWpsf-2vD5npA&s=19',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAG10Low_yCXhOGQiUyBnz5dIZPikBB6DzG9V5W4sx-vaKBzgHh9PJEJDnSv7FIBtHnppHuonE3obhULgUK8F1Snz8unSSl37FcZd6Y9CW5dS2Ctb64-XaI55zD2WGU3hi0y2Oo=w610-h353-n-k-no'
       ],
       'gyeongju': [
-        'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1615309315582-749e75ebed7c?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1613137937402-2eb3ba20d6f3?q=80&w=800&auto=format&fit=crop'
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTPAlpIxEMf9xIZFnAJ8jVKN8ZG0PY1gwH6soJStEoXsZq0r7jbH0KWLspams9U23cSsgZCt5-oHeLoBZn-Qpn2v9s&s=19',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAFSC7IH5FVGMx3lyPyKHER9c3vqy0UcWmoOM__31JOSE0YPbwPjLauv5u5g8AOMkzmRO3PIgG8zeaHkGvod3FcAyaGgIuhFZuTsi7J0M9MUC3ShFaRyLlnRqyUK55NL9bIeEkOyuQ=w610-h353-n-k-no',
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRRFRaiG6TWSDioK8vkj8Bbt5JC0y9V0w8Ue1KxZgvIWgjf98LtpNnN5i9cvpR-cUH0GnLN6F332TeES_E8sQoDkOa2&s=19'
       ],
       'sokcho': [
-        'https://images.unsplash.com/photo-1611762295679-0da871583d95?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1591557207622-7935cf1e5bc5?q=80&w=800&auto=format&fit=crop'
+        'https://www.google.com/imgres?q=sokcho&imgurl=https%3A%2F%2Fsunnydayswithjuliette.com%2Fwp-content%2Fuploads%2F2024%2F12%2Fsokcho-featured.jpg%3Fw%3D1024&imgrefurl=https%3A%2F%2Fsunnydayswithjuliette.com%2F2024%2F12%2F03%2Fbest-things-sokcho-korea%2F&docid=olQ9sZaazYLF_M&tbnid=-8oXQlc_h-U9UM&vet=12ahUKEwjitbiWvY6VAxXmif0HHc-PO5sQnPAOegQIaBAA..i&w=1024&h=767&hcb=2&ved=2ahUKEwjitbiWvY6VAxXmif0HHc-PO5sQnPAOegQIaBAA',
+        'https://www.google.com/imgres?q=sokcho&imgurl=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fnxpteyfv%2Fgoguides%2F2d78cc2e0c588a86126b55607d17914b183b6740-1600x1066.jpg&imgrefurl=https%3A%2F%2Fes.hoteles.com%2Fgo%2Fsouth-korea%2Fsokcho&docid=zNnEDCdY-S3XoM&tbnid=w7k89wbbh01_2M&vet=12ahUKEwjitbiWvY6VAxXmif0HHc-PO5sQnPAOegQINRAA..i&w=1600&h=1066&hcb=2&ved=2ahUKEwjitbiWvY6VAxXmif0HHc-PO5sQnPAOegQINRAA'
       ],
       'daegu': [
-        'https://images.unsplash.com/photo-1614863772274-a63e9e38eec4?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1589531584980-0081e7d23d8c?q=80&w=800&auto=format&fit=crop'
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRYAQLdnBkKF_nAgTG-iruRrvBr5ZiGWVlUl7OL6uCLgqfyCVFZKQXrUVjhLd3URAJOndZI2BRw3NcW3yO487tf0gHq&s=19',
+        'https://www.google.com/imgres?q=templo%20haeinsa&imgurl=https%3A%2F%2Fwww.viajeroscallejeros.com%2Fwp-content%2Fuploads%2Ftemplo-haeinsa-corea-del-sur.jpg&imgrefurl=https%3A%2F%2Fwww.viajeroscallejeros.com%2Ftemplo-haeinsa-tripitaka-coreana%2F&docid=Urws7txvxkJlfM&tbnid=BjN_bcc06IZX7M&vet=12ahUKEwi8-tDBvI6VAxWDgP0HHYtWFIIQnPAOegQIXxAA..i&w=800&h=533&hcb=2&ved=2ahUKEwi8-tDBvI6VAxWDgP0HHYtWFIIQnPAOegQIXxAA'
       ],
       'jeonju': [
-        'https://images.unsplash.com/photo-1605634563852-6d1bb0daabdf?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1614050682855-6b83f0c15d48?q=80&w=800&auto=format&fit=crop'
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQjmagYbwsgGlXGRhWcu-12zELGSwhCfG7bRM_0xq2QRVJEUKAmp53FSouXYISK55SH-CUdx0bAgaRNOG52Sw11kHs&s=19',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAEjDGFzusnhzr8UpsdJnN-tYF9I03CQSuUM3JHa4HMaSyemB0_c74idgmsOSZ30ZRrTSXPq8JJpgsdk4tn0s0PySHVbmePWi9PrTp7OnT2b-x0Lh_WzP_gkIXFv1Go0XlqbNKWK=w610-h353-n-k-no'
       ],
       'barcelona': [
-        'https://images.unsplash.com/photo-1583422409516-a515ac00ebce?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1539037116271-8b33edef7d6e?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1511527661048-7ef732000d68?q=80&w=800&auto=format&fit=crop'
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTIuWNaQTw3HP6_53A7v3pYYx74iTAWSIWHX-wU76OJyGmqyTkvrOTcJG9pE3SQFWZp9WMKqFQ45Twg6_zJDe_xX_s&s=19',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAHki9F_A7Mi-EgmCZOFwDLJYNkr-st1-CVk2LMTd7ZT0cUhM9QtIbhtcFyOHkD_-Kl64xtTHZm4HHIqBsnLusUhqQWHIwaKHB-QeuaPFObamw_BNWtS_OGMwFHINw1DMv2_Z5aO=w610-h353-n-k-no',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAGnX4CLCNZuvqvbs-HFj77t-qON2aT1PhD0HQKfTBiWHNTWy_1sydyZIWGHMTJbsjcJGACN9PJtd_DKaU-67oOre2pQOvhs_H9ERbAtmaWbVkVCTZsL63Tyl734WuybxZQvn1xJyw=w610-h353-n-k-no'
       ],
       'terrassa': [
-        'https://images.unsplash.com/photo-1558231518-e38fb50b9875?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1596700721245-e117865f121a?q=80&w=800&auto=format&fit=crop'
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSqawXHmg8z0Mp-3Ww_Ylcnpr0NsIHBR1AU6G7ds93hE5rr2yjoqPgK1w0WF6sBPNklziZCcjQErMYjbS8m-lBb3LgU&s=19',
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcSs2R9EVvzCgM54ehjPLd2uNAnNJd1SGU5RHi5ZCtdodhQKHX63-RzJhYB4nRMyiWgWJ7TpgDsaHpjtmO78RcjD_3E&s=19'
       ],
       'viladecans': [
         'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRagf6PKtjj8hSZTGkAvLpSsl_5Q8C_6tqWMHqUo7ymcmojtZDlEuwPLKMyHQX32o_zYcyxzPPoEWj99GFMvsfH7BU&s=19',
@@ -308,9 +308,9 @@ export class DestinationHeroComponent {
 
     // Default fallback si la ciudad no está en la lista (imágenes del mundo)
     return [
-      'https://images.unsplash.com/photo-1589519160732-57fc498494f8?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=800&auto=format&fit=crop',
-      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop'
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKQ3NxA7EQui-gEBmjFR63WjwdYb-66dAkasoHR5ctLw&s=10',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS81uOI8e52Y0fytIwNIJouopdvpyfz1Hv777swcm_2Ww&s=10',
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQus_9dXgjqvSTTLhs2Uym5Np1T5vz-C1T9PyRCzc7cTA&s=10'
     ];
   });
 
