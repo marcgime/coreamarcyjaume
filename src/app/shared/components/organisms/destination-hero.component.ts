@@ -245,19 +245,19 @@ export class DestinationHeroComponent {
     const city = this.locationService.currentCity().toLowerCase().trim();
     const cityImages: Record<string, string[]> = {
       'seoul': [
-        'https://images.unsplash.com/photo-1517154421773-0529f29ea451?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1538485399081-7191373e98fc?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1583274291882-628d70b7ea17?q=80&w=800&auto=format&fit=crop'
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRe2T8pmwA9JsdUZ5i-kdX-FwHQQb4W-z9lwZ9bGvd4h2s-l2_EAwMWsWJBlB_8KFHmonQ2dAmvp25_c1vyEj6Pskk&s=19',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAFW3HISUjFSizxFJds_Z1y-HKedXYwKp4xhLMWp_ga3E30WAFiYpH_oRVfSyqtO4DQ8qzPJXZJ4l5_Wt5-tGpnTvoRMghv4XwVgFB8Svi9QAgL0_xo_OkcGx3zYUmw51ddCSJw5hQ=w610-h353-n-k-no',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAEOvt-X17lJp1Nx5WhnHM1tub6LqP-8yxkP7f3cKKxHTDYg6KrbFNan_31h5FinS-Eiu2-PQhlpAWmoImcXZsMuMNpc5OaA7bQBxpZ0Ces-wUb7vhkuNgQQB3dAZUCrtLOvqjaF5g=w610-h353-n-k-no'
       ],
       'seúl': [
-        'https://images.unsplash.com/photo-1517154421773-0529f29ea451?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1538485399081-7191373e98fc?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1583274291882-628d70b7ea17?q=80&w=800&auto=format&fit=crop'
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAFruoXWzrxDn7e4jfhtluEUPdy8QKAS0A4SD2vs5RO9LGmHf_wGcWk-L-inHhnsEQsl0NZ4onYyIFr0WBiTrhCFWpQNhNWcXF8I-lRHZGZPLh-gOpl2944y6SMtPop81NdlmxMhhw=w610-h353-n-k-no',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAEWq-ukBbOThM2fP6sosvx_8y-CL7z8JHCdVlUoYXtnjCo5y5rKfdI0BOwW69rfEGLj8nyTX-NV2Gewfc2li0NRrxGiDg_KK8MPWOOoICJq0Go44UZUeQT89OpjIf0vgYWfV_GF=w610-h353-n-k-no',
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRB0bvoEeXPMv0XED1NbQafnjz54PcWP5aUBeb9B0TWC5kQVesFaGlkRKJCWDu1oWGisivzFqtpm7Iu76gfXJwV5NI&s=19'
       ],
       'busan': [
-        'https://images.unsplash.com/photo-1578321278280-e35324c45b85?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1598506161821-2e06180a424b?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1612015264353-83ea927d3fa4?q=80&w=800&auto=format&fit=crop'
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRHWTHUI-8VPzFk3TMOyMLdGiGln_hcILZeT5VRX-9-TBK-PUNiSX-Orufb8D-ixG7Cuu1h_KB-703BmjVRJXBRCBI&s=19',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAH27VjuFq84pt--DvM1aYTlK2ttwBiGRFGtkRGH7ZMHvr889WmSPQs0jCi2GSVaxWHnDnJEnRK6BgwU8Qt0-kVznrjOHuoUAZtXzycjBeBMNaqeSVZ6DI02DT8Kny8NCfA4KqJMOX1W6aTX=w610-h353-n-k-no',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAEEPQ6Vd7nf6wyv5vYb_5A5pJHm-s5NkQV5_FrzzopCQHXtb6g5sd9vxUqc345PZYDS6Wecs5Cc5fXhq4UVBV-IdNAcycw1-y1hJo6LPq6qATttO-5A8Wq1iKXvV7AUGcJal_-FbiEfn45z=w610-h353-n-k-no'
       ],
       'jeju': [
         'https://images.unsplash.com/photo-1542456488-bd98ec4e1f74?q=80&w=800&auto=format&fit=crop',
@@ -295,17 +295,17 @@ export class DestinationHeroComponent {
         'https://images.unsplash.com/photo-1596700721245-e117865f121a?q=80&w=800&auto=format&fit=crop'
       ],
       'viladecans': [
-        'https://images.unsplash.com/photo-1562916949-a2924376174d?q=80&w=800&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1576085605731-97b779a1f2da?q=80&w=800&auto=format&fit=crop'
+        'https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRagf6PKtjj8hSZTGkAvLpSsl_5Q8C_6tqWMHqUo7ymcmojtZDlEuwPLKMyHQX32o_zYcyxzPPoEWj99GFMvsfH7BU&s=19',
+        'https://lh3.googleusercontent.com/gps-cs-s/APNQkAEYxJRzmeu07RQ5MvVKF5lXoDBrL_1Dy5F3OoStOKPK99-yShPYig8nDuhtPhMT6kInAKH1ivIkHcBbFz90bnbGoB2VOT7yitaY8qwc6dMxtd4ffxmnYPde5-yvwM7kkr7fS1p50Q=s1360-w1360-h1020-rw'
       ]
     };
-    
+
     for (const key of Object.keys(cityImages)) {
       if (city.includes(key)) {
         return cityImages[key];
       }
     }
-    
+
     // Default fallback si la ciudad no está en la lista (imágenes del mundo)
     return [
       'https://images.unsplash.com/photo-1589519160732-57fc498494f8?q=80&w=800&auto=format&fit=crop',
@@ -320,7 +320,7 @@ export class DestinationHeroComponent {
     const scrollPosition = el.scrollLeft;
     // Añadimos un pequeño margen para que el cambio de índice sea fluido
     const index = Math.round(scrollPosition / slideWidth);
-    
+
     if (this.currentSlide() !== index) {
       this.currentSlide.set(index);
     }
