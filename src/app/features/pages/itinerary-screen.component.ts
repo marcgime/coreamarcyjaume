@@ -30,10 +30,7 @@ interface ItineraryDay {
             <h3 class="font-headline-sm text-headline-sm text-[20px] font-semibold" [ngClass]="getTextClass(i)">{{item.location}}</h3>
             
             <div #dayCard class="glass-card rounded-xl p-4 flex flex-col gap-3 relative overflow-hidden transition-all duration-300 cursor-pointer"
-                 (click)="toggleDay(i)"
-                 (wheel)="onScroll($event, i, dayCard)"
-                 (touchmove)="onTouchMove($event, i, dayCard)"
-                 (touchstart)="onTouchStart($event)">
+                 (click)="toggleDay(i)">
               
               <div class="flex justify-between items-start">
                 <div>
@@ -123,8 +120,6 @@ export class ItineraryScreenComponent implements OnInit {
   expandedDay: number | null = null;
   
   private cdr = inject(ChangeDetectorRef);
-  private lastTouchY = 0;
-  private isAtBottomCount = 0;
 
   ngOnInit() {
     fetch('assets/data/itinerary.json')
@@ -167,52 +162,6 @@ export class ItineraryScreenComponent implements OnInit {
     } else {
       this.expandedDay = index;
     }
-    this.isAtBottomCount = 0; // Reset
   }
 
-  onScroll(event: WheelEvent, index: number, element: HTMLElement) {
-    if (this.expandedDay !== index) return;
-    
-    const scrollContainer = element.querySelector('.custom-scroll') as HTMLElement;
-    if (!scrollContainer) return;
-
-    if (event.deltaY > 0) {
-      this.checkCloseOnScroll(scrollContainer);
-    } else {
-      this.isAtBottomCount = 0;
-    }
-  }
-
-  onTouchStart(event: TouchEvent) {
-    this.lastTouchY = event.touches[0].clientY;
-  }
-
-  onTouchMove(event: TouchEvent, index: number, element: HTMLElement) {
-    if (this.expandedDay !== index) return;
-    
-    const scrollContainer = element.querySelector('.custom-scroll') as HTMLElement;
-    if (!scrollContainer) return;
-
-    const currentY = event.touches[0].clientY;
-    const isScrollingDown = this.lastTouchY > currentY;
-    this.lastTouchY = currentY;
-
-    if (isScrollingDown) {
-      this.checkCloseOnScroll(scrollContainer);
-    } else {
-      this.isAtBottomCount = 0;
-    }
-  }
-
-  private checkCloseOnScroll(container: HTMLElement) {
-    const isAtBottom = container.scrollHeight - container.scrollTop <= container.clientHeight + 2;
-    
-    if (isAtBottom) {
-      this.isAtBottomCount++;
-      if (this.isAtBottomCount > 5) {
-        this.expandedDay = null;
-        this.isAtBottomCount = 0;
-      }
-    }
-  }
 }
