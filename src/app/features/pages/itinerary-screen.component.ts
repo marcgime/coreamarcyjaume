@@ -16,10 +16,6 @@ interface ItineraryDay {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="fixed inset-0 z-[-1] overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-surface"></div>
-    </div>
-
     <main class="content-area relative pt-[40px] pb-[120px] px-[20px]">
       <div class="relative mt-[24px]">
         <div class="absolute left-[18px] top-4 bottom-4 timeline-line opacity-20"></div>
@@ -82,12 +78,17 @@ interface ItineraryDay {
     :host {
       display: flex;
       flex-direction: column;
-      flex-grow: 1;
+      flex: 1;
+      width: 100%;
+      height: 100%;
       min-height: 0;
       overflow: hidden;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%, #f9f9fe 100%);
     }
     .content-area {
-      flex-grow: 1;
+      flex: 1;
+      width: 100%;
+      height: 100%;
       overflow-y: auto;
     }
     .bg-surface { background-color: #f9f9fe; }
