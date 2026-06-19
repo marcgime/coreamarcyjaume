@@ -31,7 +31,7 @@
     "dates": "12 ago – 13 ago",
     "status": "Confirmada",
     "price": 47,
-    "image": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=600&auto=format&fit=crop",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/213593074.jpg?k=9a73f2328eeccdd737951a036b3b5f86f2e9e2bdf039b6c07bc59b34050101e9&o=",
     "bookingUrl": "https://www.booking.com/searchresults.html?ss=Gyeongju+Bee+House",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Gyeongju+Bee+House+260-4+Geumseong-ro+Gyeongju"
   },
@@ -43,7 +43,7 @@
     "dates": "13 ago – 14 ago",
     "status": "Confirmada",
     "price": 37,
-    "image": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=600&auto=format&fit=crop",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/741745581.jpg?k=c01269bd03bd85c2c38ba1e2b42798c2b20ab328f6b93c3710c2b9ff02051dda&o=",
     "bookingUrl": "https://www.booking.com/searchresults.html?ss=Tempus+urban+stay+hotel+Daegu",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Tempus+urban+stay+hotel+562+Gukchaebosang-ro+Jung-gu+Daegu"
   },
@@ -55,7 +55,7 @@
     "dates": "14 ago – 16 ago",
     "status": "Confirmada",
     "price": 122,
-    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=600&auto=format&fit=crop",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/42900650.jpg?k=73cd9586ab8b6943ce8a284f9b95aa9099bc34218aa0f5f45f311f9153c22454&o=",
     "bookingUrl": "https://www.booking.com/searchresults.html?ss=Almond+Hotel+Busan+Station",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Almond+Hotel+Busan+Station+12-5+Jungang-daero+196beon-gil+Dong-gu+Busan"
   },
@@ -67,19 +67,19 @@
     "dates": "16 ago – 18 ago",
     "status": "Confirmada",
     "price": 110,
-    "image": "https://images.unsplash.com/photo-1628134711290-7efbc94f6e4a?q=80&w=600&auto=format&fit=crop",
+    "image": "https://q-xx.bstatic.com/xdata/images/hotel/max300/739363191.jpg?k=33f4902a26e49e3132d9594fb287b9a23d78e10af6dcb985e6fa25716ae5582a&o=",
     "bookingUrl": "https://www.booking.com/searchresults.html?ss=Hanok+Hanji+Gguljam+Second+House+Jeonju",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hanok+Hanji+Gguljam+Second+House+26-14+Taejo-ro+Wansan-gu+Jeonju"
   },
   {
     "id": "acc_7",
     "name": "Casaloma Hotel",
-    "city": "Seogwipo",
+    "city": "Seogwipo (Jeju)",
     "address": "347, Taepyeong-ro, Seogwipo-si, Jeju-do",
     "dates": "18 ago – 22 ago",
     "status": "Confirmada",
     "price": 279,
-    "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=600&auto=format&fit=crop",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/291846714.jpg?k=7d466267512256296c87633d7c72c655d9606d1ec1eead929642a7b9f1cd8813&o=",
     "bookingUrl": "https://www.booking.com/searchresults.html?ss=Casaloma+Hotel+Seogwipo",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Casaloma+Hotel+347+Taepyeong-ro+Seogwipo-si+Jeju-do"
   },
@@ -91,7 +91,7 @@
     "dates": "22 ago – 25 ago",
     "status": "Confirmada",
     "price": 223,
-    "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?q=80&w=600&auto=format&fit=crop",
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/102309677.jpg?k=2743f0da81cfdf62aee0d1e3c0a29c2294a08d1234ce4099dd0ae722ba8bd47f&o=",
     "bookingUrl": "https://www.booking.com/searchresults.html?ss=Philstay+Myeongdong+Station+Seoul",
     "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Philstay+Myeongdong+Station+4F+7+Myeongdong+8ga-gil+Jung-gu+Seoul"
   }
