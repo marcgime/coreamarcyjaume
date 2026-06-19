@@ -158,6 +158,27 @@ export class QuickActionsComponent {
   @Output() openEmergency = new EventEmitter<void>();
 
   onTranslateClick() {
-    window.open('https://translate.google.com/?sl=es&tl=ko&op=translate', '_blank');
+    const isIOS = /iPad|iPhone|iPod/i.test(navigator.userAgent);
+    const isAndroid = /Android/i.test(navigator.userAgent);
+    
+    const webUrl = 'https://translate.google.com/?sl=es&tl=ko&op=translate';
+
+    if (isIOS) {
+      // Intentar abrir la app nativa en iOS mediante custom scheme
+      window.location.href = 'googletranslate://?sl=es&tl=ko';
+      
+      // Fallback a web si la app no se abre (usando visibility API para evitar abrir web si la app ya se abrió)
+      setTimeout(() => {
+        if (!document.hidden) {
+          window.open(webUrl, '_blank');
+        }
+      }, 2000);
+    } else if (isAndroid) {
+      // Intentar abrir la app nativa en Android mediante Intent URL
+      window.location.href = 'intent://translate.google.com/?sl=es&tl=ko&op=translate#Intent;package=com.google.android.apps.translate;scheme=https;end';
+    } else {
+      // Fallback para escritorio
+      window.open(webUrl, '_blank');
+    }
   }
 }
