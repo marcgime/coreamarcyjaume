@@ -16,7 +16,13 @@ interface ItineraryDay {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <main class="content-area relative pt-[40px] pb-[120px] px-[20px]">
+    <main class="content-area relative pt-[24px] pb-[120px] px-[20px]">
+      <!-- Encabezado de la Sección -->
+      <div class="header-section">
+        <h1 class="header-title">Ruta</h1>
+        <p class="subtitle">{{ days.length }} días de viaje planificados</p>
+      </div>
+
       <div class="relative mt-[24px]">
         <div class="absolute left-[18px] top-4 bottom-4 timeline-line opacity-20"></div>
         
@@ -84,6 +90,22 @@ interface ItineraryDay {
       width: 100%;
       height: 100%;
       overflow-y: auto;
+    }
+    .header-section {
+      margin-bottom: 4px;
+    }
+    .header-title {
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 41px;
+      letter-spacing: -0.02em;
+      color: var(--primary, #1A237E);
+    }
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-secondary, #666);
+      opacity: 0.8;
+      margin-top: 4px;
     }
     .bg-surface { background-color: #f9f9fe; }
     .glass-card {
