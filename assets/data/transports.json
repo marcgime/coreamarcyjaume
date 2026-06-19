@@ -1,0 +1,101 @@
+[
+  {
+    "id": "1",
+    "type": "flight_international",
+    "category": "Vuelo Internacional",
+    "company": "Shenzhen Airlines",
+    "logo": "flight_takeoff",
+    "pnr": "NJBFDJ",
+    "passengers": [
+      { "name": "GIMENEZLIARTE/MARC", "ticket": "4792476122948" },
+      { "name": "SUBIRATSAUNOS/JAIME", "ticket": "4792476122949" }
+    ],
+    "segments": [
+      {
+        "departure": { "city": "Barcelona", "code": "BCN", "terminal": "T1", "date": "05 Ago 2026", "time": "12:20" },
+        "arrival": { "city": "Shenzhen", "code": "SZX", "terminal": "T3", "date": "06 Ago 2026", "time": "07:10" },
+        "flight": "ZH866",
+        "class": "Economy (S)",
+        "baggage": "1PC",
+        "duration": "12h 50m"
+      },
+      {
+        "departure": { "city": "Shenzhen", "code": "SZX", "terminal": "T3", "date": "06 Ago 2026", "time": "12:15" },
+        "arrival": { "city": "Seúl (Incheon)", "code": "ICN", "terminal": "T1", "date": "06 Ago 2026", "time": "16:45" },
+        "flight": "ZH631",
+        "class": "Economy (A)",
+        "baggage": "1PC",
+        "duration": "3h 30m"
+      },
+      {
+        "departure": { "city": "Seúl (Incheon)", "code": "ICN", "terminal": "T1", "date": "25 Ago 2026", "time": "17:45" },
+        "arrival": { "city": "Shenzhen", "code": "SZX", "terminal": "T3", "date": "25 Ago 2026", "time": "20:35" },
+        "flight": "ZH632",
+        "class": "Economy (A)",
+        "baggage": "1PC",
+        "duration": "3h 50m"
+      },
+      {
+        "departure": { "city": "Shenzhen", "code": "SZX", "terminal": "T3", "date": "26 Ago 2026", "time": "01:55" },
+        "arrival": { "city": "Barcelona", "code": "BCN", "terminal": "T1", "date": "26 Ago 2026", "time": "09:40" },
+        "flight": "ZH865",
+        "class": "Economy",
+        "baggage": "1PC",
+        "duration": "13h 45m"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "type": "flight_domestic",
+    "category": "Vuelo Interno",
+    "company": "Eastar Jet",
+    "logo": "flight",
+    "pnr": "JBGP3K",
+    "passengers": [
+      { "name": "GIMENEZLIARTE/MARC", "seats": ["2A (Ida)", "2B (Vuelta)"] },
+      { "name": "SUBIRATSAUNOS/JAIME", "seats": ["2B (Ida)", "2A (Vuelta)"] }
+    ],
+    "segments": [
+      {
+        "departure": { "city": "Seúl (Gimpo)", "code": "GMP", "terminal": "Nacional", "date": "18 Ago 2026", "time": "15:35" },
+        "arrival": { "city": "Jeju", "code": "CJU", "terminal": "Nacional", "date": "18 Ago 2026", "time": "16:50" },
+        "flight": "ZE223",
+        "class": "Economy (Discount)",
+        "baggage": "15kg + 5kg extra",
+        "duration": "1h 15m"
+      },
+      {
+        "departure": { "city": "Jeju", "code": "CJU", "terminal": "Nacional", "date": "22 Ago 2026", "time": "15:40" },
+        "arrival": { "city": "Seúl (Gimpo)", "code": "GMP", "terminal": "Nacional", "date": "22 Ago 2026", "time": "16:55" },
+        "flight": "ZE220",
+        "class": "Economy (Discount)",
+        "baggage": "15kg + 5kg extra",
+        "duration": "1h 15m"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "type": "car_rental",
+    "category": "Coche de Alquiler",
+    "company": "Lotte Rent-a-Car",
+    "logo": "directions_car",
+    "pnr": "2622412889",
+    "vehicle": "CASPER (G) o similar (Economy)",
+    "cdw": "Franquicia 0 KRW (CDW Completo)",
+    "totalAmount": "328.400 KRW",
+    "pickup": {
+      "location": "Jeju Airport (CJU) - Jeju Auto House",
+      "address": "92, Yonghae-ro, Jeju-si, Jeju-do",
+      "date": "18 Ago 2026",
+      "time": "17:30"
+    },
+    "dropoff": {
+      "location": "Jeju Airport (CJU) - Jeju Auto House",
+      "address": "92, Yonghae-ro, Jeju-si, Jeju-do",
+      "date": "22 Ago 2026",
+      "time": "13:30"
+    }
+  }
+]
