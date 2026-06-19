@@ -20,11 +20,10 @@ export class AppComponent implements OnInit {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: NavigationEnd) => {
       const windowFn = window as any;
-      if (windowFn.dataLayer) {
-        windowFn.dataLayer.push({
-          event: 'pageview',
-          pagePath: event.urlAfterRedirects,
-          pageTitle: document.title || 'Korea Voyage Hub'
+      if (typeof windowFn.gtag === 'function') {
+        windowFn.gtag('config', 'G-S7HJP3NGYH', {
+          page_path: event.urlAfterRedirects,
+          page_title: document.title || 'Korea Voyage Hub'
         });
       }
     });
