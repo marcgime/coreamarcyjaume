@@ -23,7 +23,7 @@ interface ItineraryDay {
         <div *ngFor="let item of days; let i = index" [id]="'day-' + i" class="relative pl-14 mb-[20px] group">
           <!-- Bolita del día -->
           <div class="absolute left-0 top-0 w-10 h-10 rounded-full flex items-center justify-center z-10 shadow-lg transition-transform cursor-pointer hover:scale-105 active:scale-95"
-               [ngClass]="getDotClass(i)"
+               [ngStyle]="getDotStyle(item.location)"
                (click)="toggleDay(i)">
             <span class="text-white font-bold text-[16px]">{{item.day}}</span>
           </div>
@@ -31,7 +31,7 @@ interface ItineraryDay {
           <div class="flex flex-col">
             <!-- Ubicación del día (Visible siempre) -->
             <div class="flex flex-col justify-center min-h-[40px] cursor-pointer" (click)="toggleDay(i)">
-              <h3 class="font-headline-sm text-[18px] font-semibold leading-tight" [ngClass]="getTextClass(i)">
+              <h3 class="font-headline-sm text-[18px] font-semibold leading-tight" [ngStyle]="getTextStyle(item.location)">
                 {{item.location}}
               </h3>
               <span class="text-[12px] text-[#454652] mt-0.5 flex items-center gap-1">
@@ -44,7 +44,7 @@ interface ItineraryDay {
             <div *ngIf="expandedDay === i" class="glass-card rounded-xl p-4 mt-2 flex flex-col gap-3 relative overflow-hidden transition-all duration-300 animate-fade-in">
               <div class="flex justify-between items-start">
                 <h4 class="font-headline-sm text-headline-sm text-[#1a1c1f] text-[18px] font-semibold">{{item.title}}</h4>
-                <span class="material-symbols-outlined cursor-pointer hover:bg-black/5 rounded-full p-1 -mr-1 -mt-1 transition-colors" [ngClass]="getTextClass(i)" (click)="toggleDay(i)">
+                <span class="material-symbols-outlined cursor-pointer hover:bg-black/5 rounded-full p-1 -mr-1 -mt-1 transition-colors" [ngStyle]="getIconStyle(item.location)" (click)="toggleDay(i)">
                   close
                 </span>
               </div>
@@ -153,32 +153,69 @@ export class ItineraryScreenComponent implements OnInit {
       .catch(err => console.error('Error fetching itinerary:', err));
   }
 
-  getDotClass(index: number) {
-    const colors = [
-      'bg-[#1a237e] shadow-[#1a237e]/20',
-      'bg-[#864e5a] shadow-[#864e5a]/20',
-      'bg-[#00a3d7] shadow-[#00a3d7]/20',
-      'bg-[#2e7d32] shadow-[#2e7d32]/20',
-      'bg-[#ef6c00] shadow-[#ef6c00]/20',
-      'bg-[#6a1b9a] shadow-[#6a1b9a]/20',
-      'bg-[#c62828] shadow-[#c62828]/20',
-      'bg-[#00838f] shadow-[#00838f]/20',
-    ];
-    return colors[index % colors.length];
+  cityColors: Record<string, string> = {
+    'seúl': '#1a237e',
+    'sokcho': '#864e5a',
+    'gyeongju': '#00a3d7',
+    'daegu': '#2e7d32',
+    'busan': '#ef6c00',
+    'jeonju': '#6a1b9a',
+    'isla de jeju': '#c62828',
+    'jeju': '#c62828',
+    'salida': '#00838f'
+  };
+
+  private getCityColor(city: string): string {
+    const cleanCity = city.trim().toLowerCase();
+    return this.cityColors[cleanCity] || '#454652';
   }
 
-  getTextClass(index: number) {
-    const colors = [
-      'text-[#1a237e]',
-      'text-[#864e5a]',
-      'text-[#00a3d7]',
-      'text-[#2e7d32]',
-      'text-[#ef6c00]',
-      'text-[#6a1b9a]',
-      'text-[#c62828]',
-      'text-[#00838f]',
-    ];
-    return colors[index % colors.length];
+  getDotStyle(location: string) {
+    const cities = location.split('→').map(c => c.trim());
+    
+    if (cities.length === 1) {
+      const color = this.getCityColor(cities[0]);
+      return {
+        'background-color': color,
+        'box-shadow': `0 4px 14px 0 ${color}40`
+      };
+    } else {
+      const color1 = this.getCityColor(cities[0]);
+      const color2 = this.getCityColor(cities[cities.length - 1]);
+      return {
+        'background': `linear-gradient(135deg, ${color1} 0%, ${color2} 100%)`,
+        'box-shadow': `0 4px 14px 0 ${color1}40`
+      };
+    }
+  }
+
+  getTextStyle(location: string) {
+    const cities = location.split('→').map(c => c.trim());
+    if (cities.length === 1) {
+      const color = this.getCityColor(cities[0]);
+      return {
+        'color': color
+      };
+    } else {
+      const color1 = this.getCityColor(cities[0]);
+      const color2 = this.getCityColor(cities[cities.length - 1]);
+      return {
+        'background': `linear-gradient(135deg, ${color1} 0%, ${color2} 100%)`,
+        '-webkit-background-clip': 'text',
+        '-webkit-text-fill-color': 'transparent',
+        'background-clip': 'text',
+        'color': 'transparent'
+      };
+    }
+  }
+
+  getIconStyle(location: string) {
+    const cities = location.split('→').map(c => c.trim());
+    // For icons, text gradient might not work perfectly without the same clips, 
+    // so we use the primary color of the first city for the icon to keep it simple and clean.
+    return {
+      'color': this.getCityColor(cities[0])
+    };
   }
 
   formatDescription(desc: string) {

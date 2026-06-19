@@ -51,11 +51,18 @@ import { IconComponent } from '../atoms/icon.component';
         <h2 class="hero-title">{{ locationService.currentCity() }}, {{ locationService.countryCode() }}</h2>
         <p class="hero-desc">Explora el corazón tecnológico y tradicional de la península coreana.</p>
         
-        <button class="hero-btn glass-card" (click)="goToItinerary($event)">
-          <div class="shimmer"></div>
-          <span>Ver Itinerario</span>
-          <app-icon name="arrow_forward" size="18px" color="#ffffff"></app-icon>
-        </button>
+        <div class="hero-action-row">
+          <button class="hero-btn glass-card" (click)="goToItinerary($event)">
+            <div class="shimmer"></div>
+            <span>Ver Itinerario</span>
+            <app-icon name="arrow_forward" size="18px" color="#ffffff"></app-icon>
+          </button>
+          
+          <div class="hero-date">
+            <app-icon name="calendar_today" size="16px" color="#ffffff"></app-icon>
+            <span>{{ formattedDate }}</span>
+          </div>
+        </div>
       </div>
     </section>
   `,
@@ -187,8 +194,28 @@ import { IconComponent } from '../atoms/icon.component';
       max-width: 290px;
       text-shadow: 0 1px 2px rgba(0,0,0,0.3);
     }
-    .hero-btn {
+    .hero-action-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
       margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .hero-date {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 500;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .hero-btn {
       padding: 12px 20px;
       border-radius: 12px;
       color: #ffffff;
@@ -242,6 +269,15 @@ export class DestinationHeroComponent {
   router = inject(Router);
 
   currentSlide = signal(0);
+
+  formattedDate = (() => {
+    const str = new Date().toLocaleDateString('es-ES', { 
+      weekday: 'long', 
+      day: 'numeric', 
+      month: 'long' 
+    });
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  })();
 
   imageUrls = computed(() => {
     const city = this.locationService.currentCity().toLowerCase().trim();
