@@ -12,7 +12,7 @@ import { NavItemComponent } from '../molecules/nav-item.component';
         <app-nav-item label="Inicio" icon="home" link="/" [linkOptions]="{ exact: true }"></app-nav-item>
         <app-nav-item label="Alojamiento" icon="bed" link="/alojamiento"></app-nav-item>
         <app-nav-item label="Ruta" icon="map" link="/ruta"></app-nav-item>
-        <app-nav-item label="Transporte" icon="train" (click)="onNotImplemented()"></app-nav-item>
+        <app-nav-item label="Transporte" icon="train" link="/transporte"></app-nav-item>
       </div>
     </nav>
   `,
@@ -45,7 +45,4 @@ import { NavItemComponent } from '../molecules/nav-item.component';
   `]
 })
 export class BottomNavComponent {
-  onNotImplemented() {
-    alert('Funcionalidad disponible próximamente');
-  }
 }
