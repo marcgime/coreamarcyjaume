@@ -1,30 +1,30 @@
 import { Component, Input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Transport } from '../../../core/services/transports.service';
+import { IconComponent } from '../atoms/icon.component';
 
 @Component({
   selector: 'app-transport-ticket',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   template: `
     <div class="ticket" [class.ticket-expanded]="isExpanded()">
       <!-- HEADER -->
       <div class="ticket-header" [ngClass]="transport.type" (click)="toggleExpand()">
-        <div class="company-info">
-          <span class="material-symbols-rounded icon">{{ transport.logo }}</span>
+        <div class="header-left">
+          <app-icon [name]="transport.logo" size="24px" color="#ffffff"></app-icon>
           <div class="title-details">
             <span class="company-name">{{ transport.company }}</span>
-            <!-- Ruta resumen visible cuando está colapsado -->
             <span class="collapsed-route" *ngIf="!isExpanded()">{{ getCollapsedRouteSummary() }}</span>
           </div>
         </div>
         <div class="header-right">
           <div class="category">{{ transport.category }}</div>
-          <span class="material-symbols-rounded chevron" [class.rotated]="isExpanded()">keyboard_arrow_down</span>
+          <app-icon name="keyboard_arrow_down" size="24px" color="#ffffff" class="chevron" [class.rotated]="isExpanded()"></app-icon>
         </div>
       </div>
       
-      <!-- DETALLES EXPANDIBLES (Transición CSS suave) -->
+      <!-- DETALLES EXPANDIBLES -->
       <div class="expandable-content" [class.show]="isExpanded()">
         <!-- BODY -->
         <div class="ticket-body">
@@ -45,7 +45,7 @@ import { Transport } from '../../../core/services/transports.service';
                     <span class="duration">{{ seg.duration }}</span>
                     <div class="journey-line">
                       <span class="line-dot"></span>
-                      <span class="material-symbols-rounded plane-icon">flight</span>
+                      <app-icon name="flight" size="16px" color="#999" class="plane-icon"></app-icon>
                       <span class="line-dot"></span>
                     </div>
                     <span class="flight-no">{{ seg.flight }}</span>
@@ -76,7 +76,7 @@ import { Transport } from '../../../core/services/transports.service';
                 <!-- Fila Extra: Equipaje -->
                 <div class="extra-row">
                   <span class="baggage-tag">
-                    <span class="material-symbols-rounded">luggage</span>
+                    <app-icon name="luggage" size="16px" color="#666"></app-icon>
                     Equipaje: {{ seg.baggage }}
                   </span>
                 </div>
@@ -114,7 +114,7 @@ import { Transport } from '../../../core/services/transports.service';
               </div>
 
               <div class="car-address-box">
-                <span class="material-symbols-rounded">location_on</span>
+                <app-icon name="location_on" size="18px" color="#E65100"></app-icon>
                 <span class="address-text">{{ transport.pickup?.address }}</span>
               </div>
 
@@ -140,7 +140,7 @@ import { Transport } from '../../../core/services/transports.service';
           <div class="passengers-box" *ngIf="transport.passengers && transport.passengers.length > 0">
             <div class="passenger-item" *ngFor="let pass of transport.passengers">
               <div class="pass-header">
-                <span class="material-symbols-rounded pass-icon">person</span>
+                <app-icon name="person" size="16px" color="#888"></app-icon>
                 <span class="pass-name">{{ pass.name }}</span>
               </div>
               <div class="pass-meta">
@@ -183,26 +183,26 @@ import { Transport } from '../../../core/services/transports.service';
       color: white;
       cursor: pointer;
       user-select: none;
+      gap: 12px;
     }
     
     .flight_international { background: linear-gradient(135deg, #1A237E, #303F9F); }
     .flight_domestic { background: linear-gradient(135deg, #00838F, #0097A7); }
     .car_rental { background: linear-gradient(135deg, #E65100, #F57C00); }
     
-    .company-info {
+    .header-left {
       display: flex;
       align-items: center;
-      gap: 10px;
-    }
-    
-    .company-info .icon {
-      font-size: 24px;
+      gap: 12px;
+      flex: 1;
+      min-width: 0; /* Permite truncar texto si es necesario */
     }
 
     .title-details {
       display: flex;
       flex-direction: column;
       gap: 2px;
+      min-width: 0;
     }
     
     .company-name {
@@ -216,12 +216,15 @@ import { Transport } from '../../../core/services/transports.service';
       font-size: 0.75rem;
       font-weight: 500;
       opacity: 0.85;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .header-right {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
     }
     
     .category {
@@ -230,13 +233,16 @@ import { Transport } from '../../../core/services/transports.service';
       letter-spacing: 0.8px;
       font-weight: 700;
       background: rgba(255, 255, 255, 0.2);
-      padding: 3px 8px;
+      padding: 4px 8px;
       border-radius: 6px;
+      white-space: nowrap;
     }
 
     .chevron {
-      font-size: 20px;
       transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .chevron.rotated {
@@ -252,7 +258,7 @@ import { Transport } from '../../../core/services/transports.service';
     }
 
     .expandable-content.show {
-      max-height: 1500px; /* Suficiente para todo el detalle */
+      max-height: 1500px;
       opacity: 1;
     }
 
@@ -349,9 +355,10 @@ import { Transport } from '../../../core/services/transports.service';
     }
 
     .plane-icon {
-      font-size: 16px;
-      color: #999;
       transform: rotate(90deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .journey-line::before, .journey-line::after {
@@ -424,11 +431,7 @@ import { Transport } from '../../../core/services/transports.service';
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 4px;
-    }
-
-    .baggage-tag span {
-      font-size: 15px;
+      gap: 6px;
     }
 
     .layover-divider {
@@ -538,11 +541,7 @@ import { Transport } from '../../../core/services/transports.service';
       border: 1px solid rgba(0,0,0,0.05);
       border-radius: 10px;
       padding: 8px 10px;
-    }
-
-    .car-address-box span {
-      color: #E65100;
-      font-size: 18px;
+      align-items: center;
     }
 
     .address-text {
@@ -655,11 +654,6 @@ import { Transport } from '../../../core/services/transports.service';
       display: flex;
       align-items: center;
       gap: 6px;
-    }
-
-    .pass-icon {
-      font-size: 16px;
-      color: #888;
     }
 
     .pass-name {
