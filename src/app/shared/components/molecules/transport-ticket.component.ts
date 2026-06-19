@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Transport } from '../../../core/services/transports.service';
 
@@ -7,138 +7,148 @@ import { Transport } from '../../../core/services/transports.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="ticket">
+    <div class="ticket" [class.ticket-expanded]="isExpanded()">
       <!-- HEADER -->
-      <div class="ticket-header" [ngClass]="transport.type">
+      <div class="ticket-header" [ngClass]="transport.type" (click)="toggleExpand()">
         <div class="company-info">
           <span class="material-symbols-rounded icon">{{ transport.logo }}</span>
-          <span class="company-name">{{ transport.company }}</span>
+          <div class="title-details">
+            <span class="company-name">{{ transport.company }}</span>
+            <!-- Ruta resumen visible cuando está colapsado -->
+            <span class="collapsed-route" *ngIf="!isExpanded()">{{ getCollapsedRouteSummary() }}</span>
+          </div>
         </div>
-        <div class="category">{{ transport.category }}</div>
+        <div class="header-right">
+          <div class="category">{{ transport.category }}</div>
+          <span class="material-symbols-rounded chevron" [class.rotated]="isExpanded()">keyboard_arrow_down</span>
+        </div>
       </div>
       
-      <!-- BODY -->
-      <div class="ticket-body">
-        <!-- VUELOS (INTERNACIONALES O DOMÉSTICOS) -->
-        <ng-container *ngIf="transport.type.startsWith('flight') && transport.segments">
-          <div class="segments-container">
-            <div *ngFor="let seg of transport.segments; let i = index" class="segment">
-              
-              <!-- Fila 1: Aeropuertos e Icono de Trayecto -->
-              <div class="airport-row">
-                <div class="airport-col">
-                  <span class="code">{{ seg.departure.code }}</span>
-                  <span class="city">{{ seg.departure.city }}</span>
-                  <span class="terminal" *ngIf="seg.departure.terminal">T{{ seg.departure.terminal }}</span>
-                </div>
+      <!-- DETALLES EXPANDIBLES (Transición CSS suave) -->
+      <div class="expandable-content" [class.show]="isExpanded()">
+        <!-- BODY -->
+        <div class="ticket-body">
+          <!-- VUELOS (INTERNACIONALES O DOMÉSTICOS) -->
+          <ng-container *ngIf="transport.type.startsWith('flight') && transport.segments">
+            <div class="segments-container">
+              <div *ngFor="let seg of transport.segments; let i = index" class="segment">
                 
-                <div class="journey-col">
-                  <span class="duration">{{ seg.duration }}</span>
-                  <div class="journey-line">
-                    <span class="line-dot"></span>
-                    <span class="material-symbols-rounded plane-icon">flight</span>
-                    <span class="line-dot"></span>
+                <!-- Fila 1: Aeropuertos e Icono de Trayecto -->
+                <div class="airport-row">
+                  <div class="airport-col">
+                    <span class="code">{{ seg.departure.code }}</span>
+                    <span class="city">{{ seg.departure.city }}</span>
+                    <span class="terminal" *ngIf="seg.departure.terminal">T{{ seg.departure.terminal }}</span>
                   </div>
-                  <span class="flight-no">{{ seg.flight }}</span>
+                  
+                  <div class="journey-col">
+                    <span class="duration">{{ seg.duration }}</span>
+                    <div class="journey-line">
+                      <span class="line-dot"></span>
+                      <span class="material-symbols-rounded plane-icon">flight</span>
+                      <span class="line-dot"></span>
+                    </div>
+                    <span class="flight-no">{{ seg.flight }}</span>
+                  </div>
+                  
+                  <div class="airport-col text-right">
+                    <span class="code">{{ seg.arrival.code }}</span>
+                    <span class="city">{{ seg.arrival.city }}</span>
+                    <span class="terminal" *ngIf="seg.arrival.terminal">T{{ seg.arrival.terminal }}</span>
+                  </div>
+                </div>
+
+                <!-- Fila 2: Tiempos y Fechas -->
+                <div class="datetime-row">
+                  <div class="datetime-col">
+                    <span class="time">{{ seg.departure.time }}</span>
+                    <span class="date">{{ seg.departure.date }}</span>
+                  </div>
+                  <div class="class-info">
+                    <span class="class-badge">{{ seg.class }}</span>
+                  </div>
+                  <div class="datetime-col text-right">
+                    <span class="time">{{ seg.arrival.time }}</span>
+                    <span class="date">{{ seg.arrival.date }}</span>
+                  </div>
+                </div>
+
+                <!-- Fila Extra: Equipaje -->
+                <div class="extra-row">
+                  <span class="baggage-tag">
+                    <span class="material-symbols-rounded">luggage</span>
+                    Equipaje: {{ seg.baggage }}
+                  </span>
+                </div>
+
+                <!-- Separador entre trayectos/escalas -->
+                <div *ngIf="i < transport.segments.length - 1" class="layover-divider">
+                  <span class="layover-text">Conexión en aeropuerto</span>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+
+          <!-- COCHE DE ALQUILER -->
+          <ng-container *ngIf="transport.type === 'car_rental'">
+            <div class="car-container">
+              <div class="car-header-details">
+                <span class="car-title">{{ transport.vehicle }}</span>
+                <span class="car-badge-cdw">🛡️ {{ transport.cdw }}</span>
+              </div>
+              
+              <div class="car-dates-grid">
+                <div class="car-date-card">
+                  <span class="card-label">Recogida</span>
+                  <span class="car-time">{{ transport.pickup?.time }}</span>
+                  <span class="car-date">{{ transport.pickup?.date }}</span>
+                  <span class="car-loc">{{ transport.pickup?.location }}</span>
                 </div>
                 
-                <div class="airport-col text-right">
-                  <span class="code">{{ seg.arrival.code }}</span>
-                  <span class="city">{{ seg.arrival.city }}</span>
-                  <span class="terminal" *ngIf="seg.arrival.terminal">T{{ seg.arrival.terminal }}</span>
+                <div class="car-date-card">
+                  <span class="card-label">Devolución</span>
+                  <span class="car-time">{{ transport.dropoff?.time }}</span>
+                  <span class="car-date">{{ transport.dropoff?.date }}</span>
+                  <span class="car-loc">{{ transport.dropoff?.location }}</span>
                 </div>
               </div>
 
-              <!-- Fila 2: Tiempos y Fechas -->
-              <div class="datetime-row">
-                <div class="datetime-col">
-                  <span class="time">{{ seg.departure.time }}</span>
-                  <span class="date">{{ seg.departure.date }}</span>
-                </div>
-                <div class="class-info">
-                  <span class="class-badge">{{ seg.class }}</span>
-                </div>
-                <div class="datetime-col text-right">
-                  <span class="time">{{ seg.arrival.time }}</span>
-                  <span class="date">{{ seg.arrival.date }}</span>
-                </div>
+              <div class="car-address-box">
+                <span class="material-symbols-rounded">location_on</span>
+                <span class="address-text">{{ transport.pickup?.address }}</span>
               </div>
 
-              <!-- Fila Extra: Equipaje -->
-              <div class="extra-row">
-                <span class="baggage-tag">
-                  <span class="material-symbols-rounded">luggage</span>
-                  Equipaje: {{ seg.baggage }}
+              <div class="car-price-box" *ngIf="transport.totalAmount">
+                <span class="price-label">Importe Total</span>
+                <span class="price-val">{{ transport.totalAmount }}</span>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+
+        <!-- DIVIDER (TICKET STYLE) -->
+        <div class="ticket-divider"></div>
+
+        <!-- FOOTER -->
+        <div class="ticket-footer">
+          <div class="pnr-row">
+            <span class="pnr-label">Localizador (PNR)</span>
+            <span class="pnr-value">{{ transport.pnr }}</span>
+          </div>
+          
+          <!-- PASAJEROS / DETALLES -->
+          <div class="passengers-box" *ngIf="transport.passengers && transport.passengers.length > 0">
+            <div class="passenger-item" *ngFor="let pass of transport.passengers">
+              <div class="pass-header">
+                <span class="material-symbols-rounded pass-icon">person</span>
+                <span class="pass-name">{{ pass.name }}</span>
+              </div>
+              <div class="pass-meta">
+                <span *ngIf="pass.ticket" class="ticket-code">Tkt: {{ pass.ticket }}</span>
+                <span *ngIf="pass.seats && pass.seats.length > 0" class="seat-badge">
+                  💺 {{ pass.seats.join(' | ') }}
                 </span>
               </div>
-
-              <!-- Separador entre trayectos/escalas -->
-              <div *ngIf="i < transport.segments.length - 1" class="layover-divider">
-                <span class="layover-text">Conexión en aeropuerto</span>
-              </div>
-            </div>
-          </div>
-        </ng-container>
-
-        <!-- COCHE DE ALQUILER -->
-        <ng-container *ngIf="transport.type === 'car_rental'">
-          <div class="car-container">
-            <div class="car-header-details">
-              <span class="car-title">{{ transport.vehicle }}</span>
-              <span class="car-badge-cdw">🛡️ {{ transport.cdw }}</span>
-            </div>
-            
-            <div class="car-dates-grid">
-              <div class="car-date-card">
-                <span class="card-label">Recogida</span>
-                <span class="car-time">{{ transport.pickup?.time }}</span>
-                <span class="car-date">{{ transport.pickup?.date }}</span>
-                <span class="car-loc">{{ transport.pickup?.location }}</span>
-              </div>
-              
-              <div class="car-date-card">
-                <span class="card-label">Devolución</span>
-                <span class="car-time">{{ transport.dropoff?.time }}</span>
-                <span class="car-date">{{ transport.dropoff?.date }}</span>
-                <span class="car-loc">{{ transport.dropoff?.location }}</span>
-              </div>
-            </div>
-
-            <div class="car-address-box">
-              <span class="material-symbols-rounded">location_on</span>
-              <span class="address-text">{{ transport.pickup?.address }}</span>
-            </div>
-
-            <div class="car-price-box" *ngIf="transport.totalAmount">
-              <span class="price-label">Importe Total</span>
-              <span class="price-val">{{ transport.totalAmount }}</span>
-            </div>
-          </div>
-        </ng-container>
-      </div>
-
-      <!-- DIVIDER (TICKET STYLE) -->
-      <div class="ticket-divider"></div>
-
-      <!-- FOOTER -->
-      <div class="ticket-footer">
-        <div class="pnr-row">
-          <span class="pnr-label">Localizador (PNR)</span>
-          <span class="pnr-value">{{ transport.pnr }}</span>
-        </div>
-        
-        <!-- PASAJEROS / DETALLES -->
-        <div class="passengers-box" *ngIf="transport.passengers && transport.passengers.length > 0">
-          <div class="passenger-item" *ngFor="let pass of transport.passengers">
-            <div class="pass-header">
-              <span class="material-symbols-rounded pass-icon">person</span>
-              <span class="pass-name">{{ pass.name }}</span>
-            </div>
-            <div class="pass-meta">
-              <span *ngIf="pass.ticket" class="ticket-code">Tkt: {{ pass.ticket }}</span>
-              <span *ngIf="pass.seats && pass.seats.length > 0" class="seat-badge">
-                💺 {{ pass.seats.join(' | ') }}
-              </span>
             </div>
           </div>
         </div>
@@ -157,14 +167,22 @@ import { Transport } from '../../../core/services/transports.service';
       flex-direction: column;
       position: relative;
       box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .ticket-expanded {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
     }
     
     .ticket-header {
-      padding: 14px 18px;
+      padding: 16px 18px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: white;
+      cursor: pointer;
+      user-select: none;
     }
     
     .flight_international { background: linear-gradient(135deg, #1A237E, #303F9F); }
@@ -174,27 +192,68 @@ import { Transport } from '../../../core/services/transports.service';
     .company-info {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 10px;
     }
     
     .company-info .icon {
-      font-size: 20px;
+      font-size: 24px;
+    }
+
+    .title-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
     
     .company-name {
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 1.05rem;
       letter-spacing: 0.2px;
+      line-height: 1.2;
+    }
+
+    .collapsed-route {
+      font-size: 0.75rem;
+      font-weight: 500;
+      opacity: 0.85;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
     
     .category {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       font-weight: 700;
       background: rgba(255, 255, 255, 0.2);
       padding: 3px 8px;
       border-radius: 6px;
+    }
+
+    .chevron {
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .chevron.rotated {
+      transform: rotate(180deg);
+    }
+
+    /* CONTENEDOR COLAPSABLE */
+    .expandable-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    }
+
+    .expandable-content.show {
+      max-height: 1500px; /* Suficiente para todo el detalle */
+      opacity: 1;
     }
 
     .ticket-body {
@@ -633,4 +692,21 @@ import { Transport } from '../../../core/services/transports.service';
 })
 export class TransportTicketComponent {
   @Input() transport!: Transport;
+  
+  isExpanded = signal<boolean>(false);
+
+  toggleExpand() {
+    this.isExpanded.update(val => !val);
+  }
+
+  getCollapsedRouteSummary(): string {
+    if (this.transport.type.startsWith('flight') && this.transport.segments) {
+      const firstSegment = this.transport.segments[0];
+      const lastSegment = this.transport.segments[this.transport.segments.length - 1];
+      return `${firstSegment.departure.code} ➔ ${lastSegment.arrival.code} (${this.transport.segments.length} trayectos)`;
+    } else if (this.transport.type === 'car_rental') {
+      return `Alquiler en ${this.transport.pickup?.location || 'Jeju'}`;
+    }
+    return '';
+  }
 }
