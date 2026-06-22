@@ -65,10 +65,10 @@ import { EmergencyModalComponent } from '../../shared/components/organisms/emerg
     }
     .header-title {
       font-size: 34px;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 41px;
       letter-spacing: -0.02em;
-      color: #1a237e;
+      color: var(--primary);
       margin-bottom: 8px;
     }
   `]

@@ -27,12 +27,12 @@ import { NavItemComponent } from '../molecules/nav-item.component';
       z-index: 100;
       display: flex;
       justify-content: center;
-      background: rgba(255, 255, 255, 0.35); /* Transparente */
-      backdrop-filter: blur(12px); /* Menos difuminado */
-      -webkit-backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.55); /* Borde sutil y catch-light en 360 grados */
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-nav-blur);
+      -webkit-backdrop-filter: var(--glass-nav-blur);
+      border: 1px solid var(--glass-border);
       border-radius: 9999px; /* Forma de píldora tipo dock de Apple */
-      box-shadow: 0 10px 40px 0 rgba(26, 35, 126, 0.12); /* Sombra elegante e integrada */
+      box-shadow: 0 12px 40px 0 rgba(43, 59, 156, 0.16); /* Sombra elegante e integrada */
     }
     .nav-bar {
       display: flex;

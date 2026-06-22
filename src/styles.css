@@ -1,31 +1,31 @@
 /* Global Styles and Design System Tokens */
 
 :root {
-  /* Colors */
-  --primary: #1a237e;
-  --primary-rgb: 26, 35, 126;
-  --primary-dark: #000666;
-  --secondary: #ffb7c5; /* Cherry Blossom Pink */
-  --tertiary: #00a3d7; /* Neon Cyan */
-  --tertiary-glow: rgba(0, 163, 215, 0.4);
+  /* Colors - Material 3 Expressive Inspired */
+  --primary: #2b3b9c; /* Indigo más expresivo y moderno */
+  --primary-rgb: 43, 59, 156;
+  --primary-dark: #121858;
+  --secondary: #ff7597; /* Cherry Blossom Pink más vibrante y expresivo */
+  --tertiary: #00b8e6; /* Neon Cyan más visible */
+  --tertiary-glow: rgba(0, 184, 230, 0.4);
   
-  --bg-color: #f9f9fe;
-  --text-primary: #1a1c1f;
-  --text-secondary: #454652;
+  --bg-color: #f6f7fb;
+  --text-primary: #12131a;
+  --text-secondary: #5c5d6b;
   --text-white: #ffffff;
   
   --error: #ba1a1a;
-  --error-bg: rgba(186, 26, 26, 0.1);
-  --error-border: rgba(186, 26, 26, 0.2);
+  --error-bg: rgba(186, 26, 26, 0.08);
+  --error-border: rgba(186, 26, 26, 0.15);
   
-  --outline: #767683;
-  --outline-variant: #c6c5d4;
+  --outline: #747585;
+  --outline-variant: #c3c4d9;
   
-  /* Glass Surfaces */
-  --glass-bg: rgba(255, 255, 255, 0.45);
-  --glass-border: rgba(255, 255, 255, 0.5);
-  --glass-blur: blur(20px);
-  --glass-nav-blur: blur(25px);
+  /* Glass Surfaces - Glassmorphism Premium */
+  --glass-bg: rgba(255, 255, 255, 0.28);
+  --glass-border: rgba(255, 255, 255, 0.45);
+  --glass-blur: blur(24px) saturate(180%);
+  --glass-nav-blur: blur(30px) saturate(200%);
   
   /* Spacing */
   --safe-area-bottom: 34px;
@@ -40,10 +40,15 @@
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text-primary);
-  background-color: #f0f0f5; /* Fondo en pantallas de escritorio */
+  background-color: #e9ebf4; /* Fondo exterior más integrado con el tono azul */
   overflow: hidden; /* Prevenir scroll del body general */
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
 }

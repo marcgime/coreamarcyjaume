@@ -50,15 +50,15 @@ import { IconComponent } from '../atoms/icon.component';
       gap: 16px;
     }
     .glass-card {
-      background: rgba(255, 255, 255, 0.45);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 10px 36px 0 rgba(43, 59, 156, 0.06);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
     }
     .bento-card {
-      border-radius: 24px;
+      border-radius: 28px;
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -68,11 +68,11 @@ import { IconComponent } from '../atoms/icon.component';
       color: inherit;
     }
     .bento-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px rgba(26, 35, 126, 0.08);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(43, 59, 156, 0.12);
     }
     .bento-card:active {
-      transform: scale(0.97);
+      transform: scale(0.95);
     }
     .bento-large {
       grid-row: span 2; /* Ocupa las dos filas */
@@ -82,25 +82,26 @@ import { IconComponent } from '../atoms/icon.component';
     }
     .bento-small-card {
       padding: 16px 20px;
-      border-radius: 24px;
+      border-radius: 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       cursor: pointer;
       color: inherit;
       height: 100%;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.25s ease;
     }
     .bento-small-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 16px rgba(26, 35, 126, 0.06);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(43, 59, 156, 0.08);
     }
     .bento-small-card:active {
-      transform: scale(0.97);
+      transform: scale(0.95);
     }
     .bento-icon-wrapper {
       width: 44px;
       height: 44px;
-      border-radius: 12px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -108,43 +109,49 @@ import { IconComponent } from '../atoms/icon.component';
     
     /* Specific Colors */
     .bento-translate .bento-icon-wrapper {
-      background: rgba(26, 35, 126, 0.1);
+      background: rgba(43, 59, 156, 0.12);
     }
     .bento-currency .bento-icon-wrapper {
-      background: rgba(0, 163, 215, 0.1);
+      background: rgba(0, 184, 230, 0.12);
     }
     .bento-emergency {
-      background: rgba(186, 26, 26, 0.08);
+      background: rgba(186, 26, 26, 0.06);
       border: 1px solid rgba(186, 26, 26, 0.15);
-      box-shadow: 0 4px 16px 0 rgba(186, 26, 26, 0.04);
+      box-shadow: 0 6px 20px 0 rgba(186, 26, 26, 0.04);
     }
     .bento-emergency:hover {
-      background: rgba(186, 26, 26, 0.12);
+      background: rgba(186, 26, 26, 0.1);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(186, 26, 26, 0.08);
+    }
+    .bento-emergency:active {
+      transform: scale(0.95);
     }
     .bento-emergency .bento-icon-wrapper {
       background: #ba1a1a;
     }
     .bento-emergency-text {
       color: #ba1a1a;
-      font-weight: 600;
+      font-weight: 700;
     }
     .bento-title {
       font-size: 18px;
-      font-weight: 600;
-      color: #1a237e;
+      font-weight: 700;
+      color: var(--primary);
       margin-top: 12px;
     }
     .bento-title-small {
       font-size: 16px;
-      font-weight: 600;
-      color: #1a237e;
+      font-weight: 700;
+      color: var(--primary);
     }
     .bento-subtitle {
       font-size: 11px;
-      color: #454652;
+      color: var(--text-secondary);
       margin-top: 4px;
       text-transform: uppercase;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.04em;
+      font-weight: 600;
     }
     .flex-center-y {
       display: flex;

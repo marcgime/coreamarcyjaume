@@ -157,22 +157,22 @@ import { IconComponent } from '../atoms/icon.component';
   `,
   styles: [`
     .ticket {
-      background: var(--glass-bg, rgba(255, 255, 255, 0.7));
-      backdrop-filter: var(--glass-blur, blur(20px));
-      -webkit-backdrop-filter: var(--glass-blur, blur(20px));
-      border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.4));
-      border-radius: 24px;
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 28px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       position: relative;
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 10px 36px 0 rgba(43, 59, 156, 0.06);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .ticket-expanded {
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(43, 59, 156, 0.12);
+      transform: translateY(-3px);
     }
     
     .ticket-header {
@@ -186,9 +186,9 @@ import { IconComponent } from '../atoms/icon.component';
       gap: 12px;
     }
     
-    .flight_international { background: linear-gradient(135deg, #1A237E, #303F9F); }
-    .flight_domestic { background: linear-gradient(135deg, #00838F, #0097A7); }
-    .car_rental { background: linear-gradient(135deg, #E65100, #F57C00); }
+    .flight_international { background: linear-gradient(135deg, var(--primary), #485ac6); }
+    .flight_domestic { background: linear-gradient(135deg, #007c8a, var(--tertiary)); }
+    .car_rental { background: linear-gradient(135deg, #d34900, #ff8f00); }
     
     .header-left {
       display: flex;

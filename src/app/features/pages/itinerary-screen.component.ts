@@ -47,7 +47,7 @@ interface ItineraryDay {
             </div>
             
             <!-- Detalles expandidos -->
-            <div *ngIf="expandedDay === i" class="glass-card rounded-xl p-4 mt-2 flex flex-col gap-3 relative overflow-hidden transition-all duration-300 animate-fade-in">
+            <div *ngIf="expandedDay === i" class="glass-card rounded-[24px] p-4 mt-2 flex flex-col gap-3 relative overflow-hidden transition-all duration-300 animate-fade-in">
               <div class="flex justify-between items-start">
                 <h4 class="font-headline-sm text-headline-sm text-[#1a1c1f] text-[18px] font-semibold">{{item.title}}</h4>
                 <span class="material-symbols-outlined cursor-pointer hover:bg-black/5 rounded-full p-1 -mr-1 -mt-1 transition-colors" [ngStyle]="getIconStyle(item.location)" (click)="toggleDay(i)">
@@ -107,16 +107,17 @@ interface ItineraryDay {
       opacity: 0.8;
       margin-top: 4px;
     }
-    .bg-surface { background-color: #f9f9fe; }
+    .bg-surface { background-color: var(--bg-color); }
     .glass-card {
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 10px 32px 0 rgba(43, 59, 156, 0.05);
     }
     .timeline-line {
-      width: 2px;
-      background: linear-gradient(180deg, #1a237e 0%, #00a3d7 50%, #1a237e 100%);
+      width: 3px;
+      background: linear-gradient(180deg, var(--primary) 0%, var(--tertiary) 50%, var(--primary) 100%);
     }
     .custom-scroll::-webkit-scrollbar {
       width: 4px;

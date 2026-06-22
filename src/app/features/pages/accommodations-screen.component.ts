@@ -106,22 +106,22 @@ import { IconComponent } from '../../shared/components/atoms/icon.component';
       gap: 24px;
     }
     .accommodation-card {
-      border-radius: 24px;
+      border-radius: 28px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
     }
     .accommodation-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(26, 35, 126, 0.08);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(43, 59, 156, 0.12);
     }
     .glass-card {
       background: var(--glass-bg);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
       border: 1px solid var(--glass-border);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+      box-shadow: 0 10px 36px 0 rgba(43, 59, 156, 0.06);
     }
     .image-container {
       position: relative;
@@ -152,7 +152,7 @@ import { IconComponent } from '../../shared/components/atoms/icon.component';
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
     .status-badge.confirmada {
-      background: rgba(26, 35, 126, 0.85);
+      background: rgba(43, 59, 156, 0.85);
       color: #ffffff;
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
@@ -192,8 +192,8 @@ import { IconComponent } from '../../shared/components/atoms/icon.component';
       font-size: 11px;
       font-weight: 600;
       color: var(--tertiary);
-      background: rgba(0, 163, 215, 0.1);
-      border: 1px solid rgba(0, 163, 215, 0.15);
+      background: rgba(0, 184, 230, 0.1);
+      border: 1px solid rgba(0, 184, 230, 0.15);
       padding: 4px 10px;
       border-radius: 8px;
       white-space: nowrap;
@@ -217,7 +217,7 @@ import { IconComponent } from '../../shared/components/atoms/icon.component';
     }
     .divider {
       height: 1px;
-      background: rgba(26, 35, 126, 0.1);
+      background: rgba(43, 59, 156, 0.1);
       margin: 4px 0;
     }
     .address-container {
@@ -242,32 +242,32 @@ import { IconComponent } from '../../shared/components/atoms/icon.component';
       justify-content: center;
       gap: 8px;
       padding: 12px;
-      border-radius: 12px;
+      border-radius: 16px; /* Esquinas redondeadas M3 */
       font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       text-decoration: none;
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
       cursor: pointer;
     }
     .btn:active {
-      transform: scale(0.96);
+      transform: scale(0.95);
     }
     .btn-maps {
       background: var(--primary);
       color: #ffffff;
       border: 1px solid var(--primary);
-      box-shadow: 0 4px 12px rgba(26, 35, 126, 0.15);
+      box-shadow: 0 4px 12px rgba(43, 59, 156, 0.15);
     }
     .btn-maps:hover {
       background: var(--primary-dark);
-      box-shadow: 0 6px 16px rgba(26, 35, 126, 0.25);
+      box-shadow: 0 8px 20px rgba(43, 59, 156, 0.25);
     }
     .btn-booking {
       background: rgba(255, 255, 255, 0.6);
       color: var(--primary);
-      border: 1px solid rgba(26, 35, 126, 0.2);
+      border: 1px solid rgba(43, 59, 156, 0.2);
     }
     .btn-booking:hover {
       background: rgba(255, 255, 255, 0.95);

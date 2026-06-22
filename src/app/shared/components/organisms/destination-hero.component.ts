@@ -72,10 +72,11 @@ import { IconComponent } from '../atoms/icon.component';
       height: 420px;
       border-radius: 32px;
       overflow: hidden;
-      box-shadow: 0 20px 40px 0 rgba(26, 35, 126, 0.15);
+      box-shadow: 0 24px 48px 0 rgba(43, 59, 156, 0.14);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      border: 1px solid rgba(255, 255, 255, 0.45);
     }
     
     .hero-carousel {
@@ -135,9 +136,9 @@ import { IconComponent } from '../atoms/icon.component';
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0.3) 50%,
-        rgba(26, 35, 126, 0.85) 100%
+        rgba(0, 0, 0, 0.05) 0%,
+        rgba(0, 0, 0, 0.25) 45%,
+        rgba(43, 59, 156, 0.88) 100%
       );
       z-index: 2;
       pointer-events: none;
@@ -182,17 +183,17 @@ import { IconComponent } from '../atoms/icon.component';
     }
     .hero-title {
       font-size: 30px;
-      font-weight: 700;
+      font-weight: 800;
       line-height: 36px;
       letter-spacing: -0.01em;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
     .hero-desc {
       font-size: 15px;
       line-height: 20px;
       opacity: 0.9;
       max-width: 290px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     }
     .hero-action-row {
       display: flex;
@@ -207,43 +208,43 @@ import { IconComponent } from '../atoms/icon.component';
       gap: 6px;
       font-size: 13px;
       color: rgba(255, 255, 255, 0.95);
-      font-weight: 500;
+      font-weight: 600;
       background: rgba(0, 0, 0, 0.25);
       padding: 10px 14px;
-      border-radius: 12px;
+      border-radius: 9999px;
       border: 1px solid rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
     .hero-btn {
-      padding: 12px 20px;
-      border-radius: 12px;
+      padding: 12px 24px;
+      border-radius: 9999px; /* Píldora moderna M3 */
       color: #ffffff;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       width: max-content;
       cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
       position: relative;
       overflow: hidden;
-    }
-    .glass-card {
-      background: rgba(255, 255, 255, 0.45);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.5);
-      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     .hero-btn:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.03);
+      background: rgba(255, 255, 255, 0.35);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
     }
     .hero-btn:active {
-      transform: translateY(0);
+      transform: translateY(-1px) scale(0.97);
     }
     .shimmer {
       position: absolute;

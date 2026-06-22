@@ -10,12 +10,17 @@ import { IconComponent } from '../atoms/icon.component';
   template: `
     @if (link) {
       <a [routerLink]="link" [routerLinkActiveOptions]="linkOptions" routerLinkActive="active" #rla="routerLinkActive" class="nav-item">
-        <app-icon [name]="icon" size="24px" [color]="rla.isActive ? '#00a3d7' : '#454652'"></app-icon>
+        <div class="icon-wrapper">
+          <div class="active-indicator"></div>
+          <app-icon [name]="icon" size="22px" [color]="rla.isActive ? 'var(--primary)' : 'var(--text-secondary)'"></app-icon>
+        </div>
         <span class="nav-label">{{ label }}</span>
       </a>
     } @else {
       <a class="nav-item" href="#" (click)="$event.preventDefault()">
-        <app-icon [name]="icon" size="24px" color="#454652"></app-icon>
+        <div class="icon-wrapper">
+          <app-icon [name]="icon" size="22px" color="var(--text-secondary)"></app-icon>
+        </div>
         <span class="nav-label">{{ label }}</span>
       </a>
     }
@@ -26,27 +31,62 @@ import { IconComponent } from '../atoms/icon.component';
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #454652;
+      color: var(--text-secondary);
       text-decoration: none;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 600;
+      font-family: 'Plus Jakarta Sans', sans-serif;
       letter-spacing: 0.02em;
       transition: all 0.2s ease;
       flex-grow: 1;
       height: 100%;
-      opacity: 0.7;
+      opacity: 0.85;
     }
     .nav-item:hover {
-      opacity: 0.9;
-      color: #1a237e;
+      opacity: 1;
+      color: var(--primary);
+    }
+    .icon-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 32px;
+      border-radius: 16px;
+      z-index: 1;
+      margin-bottom: 2px;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .active-indicator {
+      position: absolute;
+      inset: 0;
+      background: rgba(43, 59, 156, 0.12); /* Color de fondo sutil del indicator pill */
+      border-radius: 16px;
+      z-index: -1;
+      transform: scaleX(0.3);
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
     }
     .nav-label {
-      margin-top: 2px;
+      margin-top: 1px;
+      font-size: 10px;
+      transition: font-weight 0.2s ease;
     }
     .active {
-      color: #00a3d7;
+      color: var(--primary);
       opacity: 1;
-      filter: drop-shadow(0 0 6px rgba(0, 163, 215, 0.4));
+    }
+    .active .active-indicator {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+    .active .nav-label {
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .active .icon-wrapper {
+      transform: scale(1.05);
     }
     .active ::ng-deep .material-symbols-outlined {
       font-variation-settings: 'FILL' 1;
