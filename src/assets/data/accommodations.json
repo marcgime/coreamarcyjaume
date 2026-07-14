@@ -1,15 +1,15 @@
 [
   {
     "id": "acc_1",
-    "name": "Local Stitch Creator Town Seogyo",
+    "name": "Olive hostel R",
     "city": "Seúl",
-    "address": "41, World Cup Buk-Ro 5-Gil, Mapo-gu, Seúl",
+    "address": "74, Toegye-ro 18-gil, Jung-gu, Jung-gu, 04630 Seúl, Corea del Sur",
     "dates": "6 ago – 10 ago",
     "status": "Confirmada",
-    "price": 400,
-    "image": "https://r-xx.bstatic.com/xdata/images/hotel/max300/635094540.jpg?k=ba4e63c781d53d7cdb999bf907d1ea7da444f7f32f1a88a034a0e782049a6164&o=",
-    "bookingUrl": "https://www.booking.com/searchresults.html?ss=Local+Stitch+Creator+Town+Seogyo",
-    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Local+Stitch+Creator+Town+Seogyo+Seoul"
+    "price": 243,
+    "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/545814549.jpg?k=5bdac8f86f28b675427286722351efad48185a3d75a30027b0d0765c56df7b9a&o=",
+    "bookingUrl": "https://www.booking.com/hotel/kr/olive-hostel-r-residence.es.html",
+    "mapsUrl": "https://www.google.com/maps/place/Olive+hostel+R(Residence)/@37.5577398,126.9818312,957m/data=!3m1!1e3!4m9!3m8!1s0x357ca2f70fddf823:0x49b912a473c41c37!5m2!4m1!1i2!8m2!3d37.5577398!4d126.9844115!16s%2Fg%2F11sdq5dj5_?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D"
   },
   {
     "id": "acc_2",
